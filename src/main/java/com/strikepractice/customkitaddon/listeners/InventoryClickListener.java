@@ -23,7 +23,16 @@ public class InventoryClickListener implements Listener {
         if (!(event.getWhoClicked() instanceof Player)) return;
 
         Player player = (Player) event.getWhoClicked();
-        String title = event.getView().getTitle();
+
+        // Get title - handle both old and new API
+        String title;
+        try {
+            // Try new API first (1.20.5+)
+            title = event.getView().title().toString();
+        } catch (NoSuchMethodError e) {
+            // Fallback to legacy method
+            title = event.getView().getTitle();
+        }
 
         // Handle custom items GUI clicks
         if (title.contains("Custom Kit Items - Page")) {
