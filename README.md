@@ -1,9 +1,13 @@
 # 🎉 CustomKitAddon - Strikepractice Customkit Silly Addon
 
 **Multi-page custom items GUI** - 3 paginated pages with navigation, opened on clicking on blank slots in **/customkit**
+
 **Mending enchantment** - Added to armor enchantment section alongside Protection and Unbreaking
+
 **Chat-based renaming kits** - With support of color code and timeout feature
+
 **Admin commands** - /customkitadmin add and /customkitadmin reload
+
 **Full YAML config** - Custom items with enchantments, attributes and special properties
 
 
