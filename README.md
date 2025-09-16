@@ -16,13 +16,13 @@
 CustomKitAddon/
 │
 ├── libs/
-│   └── strikepractice-api.jar (download from API site)
+│   └── api.jar (download from API site)
 │
 ├── src/
 │   └── main/
 │       ├── java/
 │       │   └── com/
-│       │       └── strikepractice/
+│       │       └── sp/
 │       │           └── customkitaddon/
 │       │               ├── CustomKitAddon.java (Main plugin class)
 │       │               │
@@ -42,7 +42,7 @@ CustomKitAddon/
 │       │               ├── listeners/
 │       │               │   ├── ChatListener.java
 │       │               │   ├── InventoryClickListener.java
-│       │               │   └── StrikePracticeListener.java
+│       │               │   └── SpListener.java
 │       │               │
 │       │               ├── models/
 │       │               │   └── CustomItem.java
