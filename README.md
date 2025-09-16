@@ -1,6 +1,6 @@
 # 🎉 CustomKitAddon - Customkit Silly Addon
 
-**Multi-page custom items GUI** - 3 paginated pages with navigation, opened on clicking on blank slots in **/customkit**
+**Multi-page custom items GUI** - 3 pages with navigation, opened on clicking on blank slots in **/customkit**
 
 **Mending enchantment** - Added to armor enchantment section alongside Protection and Unbreaking
 
