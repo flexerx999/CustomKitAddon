@@ -1,0 +1,34 @@
+name: CustomKitAddon
+version: ${project.version}
+main: com.strikepractice.customkitaddon.CustomKitAddon
+author: CustomDev
+description: Advanced Custom Kit addon for StrikePractice
+api-version: '1.21'
+softdepend: [StrikePractice]
+
+commands:
+  customkitadmin:
+    description: Admin commands for CustomKit
+    permission: customkit.admin
+    aliases: [cka]
+    usage: /<command> <add|reload>
+
+permissions:
+  customkit.use:
+    description: Allows using the custom kit GUI
+    default: true
+  customkit.admin:
+    description: All admin permissions
+    default: op
+    children:
+      customkit.admin.add: true
+      customkit.admin.reload: true
+  customkit.admin.add:
+    description: Add items to custom kit pages
+    default: op
+  customkit.admin.reload:
+    description: Reload configuration files
+    default: op
+  customkit.rename:
+    description: Rename kits via chat
+    default: true

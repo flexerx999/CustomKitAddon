@@ -1,0 +1,35 @@
+# CustomKitAddon Configuration
+# Advanced Custom Kit addon for StrikePractice
+
+# GUI Settings
+gui:
+  title: "&8Custom Kit Items - Page %page%"
+  items-per-page: 45  # Max items per page (excluding bottom navigation row)
+
+# Settings
+settings:
+  debug: false
+  rename-timeout: 30  # Seconds before rename times out
+  sounds:
+    enabled: true
+    select: "ENTITY_EXPERIENCE_ORB_PICKUP"
+
+# Enchantment Settings
+enchantments:
+  mending:
+    enabled: true
+    slot: 7  # Slot in the enchantment GUI for Mending option
+
+# Messages
+messages:
+  no-permission: "&cYou don't have permission to use this!"
+  item-selected: "&aSelected &e%item% &afor your custom kit!"
+  error-applying-item: "&cFailed to apply item to your kit!"
+  rename-prompt: "&aType the new kit name in chat (supports color codes with &):"
+  rename-cancel-info: "&7Type &ccancel &7to cancel the rename process."
+  rename-timeout: "&cRename timed out!"
+  rename-cancelled: "&cRename cancelled!"
+  rename-too-long: "&cKit name is too long! Maximum 32 characters."
+  rename-success: "&aKit renamed to: &f%name%"
+  rename-error: "&cFailed to rename kit!"
+  enchantments-applied: "&aEnchantments applied successfully!"
