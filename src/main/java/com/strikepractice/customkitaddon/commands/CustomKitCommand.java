@@ -8,9 +8,14 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 public class CustomKitCommand implements Listener {
 
     private final CustomKitAddon plugin;
+    private final Set<UUID> customKitUsers = new HashSet<>();
 
     public CustomKitCommand(CustomKitAddon plugin) {
         this.plugin = plugin;
@@ -23,6 +28,21 @@ public class CustomKitCommand implements Listener {
     public void onCommand(PlayerCommandPreprocessEvent event) {
         String command = event.getMessage().toLowerCase();
         Player player = event.getPlayer();
+
+        // Track when players use /customkit
+        if (command.equals("/customkit") || command.startsWith("/customkit ")) {
+            // Mark this player as using customkit
+            customKitUsers.add(player.getUniqueId());
+
+            // Remove after 10 seconds
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                customKitUsers.remove(player.getUniqueId());
+            }, 200L);
+
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Player " + player.getName() + " used /customkit command");
+            }
+        }
 
         // Check for /customkit items command
         if (command.startsWith("/customkit items")) {
@@ -48,5 +68,13 @@ public class CustomKitCommand implements Listener {
             // Open custom items GUI directly
             plugin.getGuiManager().openCustomItemsGUI(player, page, -1);
         }
+    }
+
+    public boolean isUsingCustomKit(Player player) {
+        return customKitUsers.contains(player.getUniqueId());
+    }
+
+    public void removeUser(Player player) {
+        customKitUsers.remove(player.getUniqueId());
     }
 }

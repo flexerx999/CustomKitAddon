@@ -12,6 +12,10 @@ commands:
     permission: customkit.admin
     aliases: [cka]
     usage: /<command> <add|reload>
+  cktest:
+    description: Debug test command for CustomKit
+    permission: customkit.admin
+    usage: /<command> <kit|gui|api>
 
 permissions:
   customkit.use:

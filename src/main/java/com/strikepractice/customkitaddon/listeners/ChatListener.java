@@ -102,26 +102,52 @@ public class ChatListener implements Listener {
 
     private void applyKitName(Player player, String name) {
         try {
-            // Since StrikePractice API doesn't support kit renaming,
-            // we'll store the custom names in our own config
+            ga.strikepractice.api.StrikePracticeAPI api = plugin.getStrikePracticeAPI();
 
-            // Save the custom name in our config
-            String path = "custom-kit-names." + player.getUniqueId().toString();
-            plugin.getConfigManager().getConfig().set(path, name);
-            plugin.getConfigManager().save();
+            // Get the custom kit
+            ga.strikepractice.battlekit.BattleKit customKit = api.getCustomKit();
 
-            // Notify the player
-            player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
-                    .replace("%name%", name));
+            if (customKit != null) {
+                // Try to set the name using reflection
+                try {
+                    java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("name");
+                    nameField.setAccessible(true);
+                    nameField.set(customKit, name);
 
-            if (plugin.getConfigManager().isDebugEnabled()) {
-                plugin.getLogger().info("Saved custom kit name '" + name + "' for " + player.getName());
+                    // Save the modified kit back
+                    api.setCustomKit(customKit);
+
+                    player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
+                            .replace("%name%", name));
+                } catch (NoSuchFieldException e) {
+                    // Try "displayName" field
+                    try {
+                        java.lang.reflect.Field displayNameField = customKit.getClass().getDeclaredField("displayName");
+                        displayNameField.setAccessible(true);
+                        displayNameField.set(customKit, name);
+                        api.setCustomKit(customKit);
+
+                        player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
+                                .replace("%name%", name));
+                    } catch (Exception ex) {
+                        saveLocalKitName(player, name);
+                    }
+                }
+            } else {
+                saveLocalKitName(player, name);
             }
 
         } catch (Exception e) {
-            plugin.getLogger().warning("Failed to save kit name: " + e.getMessage());
-            player.sendMessage(plugin.getConfigManager().getMessage("rename-error"));
+            plugin.getLogger().warning("Failed to rename kit: " + e.getMessage());
+            saveLocalKitName(player, name);
         }
+    }
+
+    private void saveLocalKitName(Player player, String name) {
+        String path = "custom-kit-names." + player.getUniqueId().toString();
+        plugin.getConfigManager().getConfig().set(path, name);
+        plugin.getConfigManager().save();
+        player.sendMessage("§aKit name saved locally: " + name);
     }
 
     public void cancelRename(Player player) {

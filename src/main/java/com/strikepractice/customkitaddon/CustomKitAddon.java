@@ -2,6 +2,7 @@ package com.strikepractice.customkitaddon;
 
 import com.strikepractice.customkitaddon.commands.AdminCommand;
 import com.strikepractice.customkitaddon.commands.CustomKitCommand;
+import com.strikepractice.customkitaddon.commands.TestCommand;
 import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;
@@ -21,6 +22,7 @@ public class CustomKitAddon extends JavaPlugin {
     private ItemsConfig itemsConfig;
     private GUIManager guiManager;
     private ChatListener chatListener;
+    private CustomKitCommand customKitCommand;
 
     @Override
     public void onEnable() {
@@ -56,6 +58,11 @@ public class CustomKitAddon extends JavaPlugin {
 
         getLogger().info("CustomKitAddon v" + getDescription().getVersion() + " has been enabled!");
         getLogger().info("Hooked into StrikePractice successfully!");
+
+        // Enable debug mode for testing
+        if (configManager.isDebugEnabled()) {
+            getLogger().info("Debug mode is enabled - extra logging active");
+        }
     }
 
     @Override
@@ -67,11 +74,14 @@ public class CustomKitAddon extends JavaPlugin {
     }
 
     private void registerCommands() {
-        // Override customkit command
+        // Admin command
         getCommand("customkitadmin").setExecutor(new AdminCommand(this));
 
+        // Test/debug command
+        getCommand("cktest").setExecutor(new TestCommand(this));
+
         // Register customkit interceptor
-        new CustomKitCommand(this);
+        customKitCommand = new CustomKitCommand(this);
     }
 
     private void registerListeners() {
@@ -111,5 +121,9 @@ public class CustomKitAddon extends JavaPlugin {
 
     public ChatListener getChatListener() {
         return chatListener;
+    }
+
+    public CustomKitCommand getCustomKitCommand() {
+        return customKitCommand;
     }
 }

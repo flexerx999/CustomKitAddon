@@ -49,6 +49,10 @@ public class GUIManager {
         return selectedSlots.getOrDefault(player.getUniqueId(), -1);
     }
 
+    public void setSelectedSlot(Player player, int slot) {
+        selectedSlots.put(player.getUniqueId(), slot);
+    }
+
     public void clearCache() {
         openGuis.clear();
         selectedSlots.clear();

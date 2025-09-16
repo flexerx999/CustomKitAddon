@@ -2,6 +2,7 @@ package com.strikepractice.customkitaddon.listeners;
 
 import com.strikepractice.customkitaddon.CustomKitAddon;
 import com.strikepractice.customkitaddon.gui.CustomItemsGUI;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,7 +19,7 @@ public class InventoryClickListener implements Listener {
         this.plugin = plugin;
     }
 
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = false)
     public void onInventoryClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player)) return;
 
@@ -26,16 +27,30 @@ public class InventoryClickListener implements Listener {
 
         // Get title - handle both old and new API
         String title;
+        String componentTitle = "";
         try {
-            // Try new API first (1.20.5+)
-            title = event.getView().title().toString();
+            // Try new API first (1.20.5+) - get the full component
+            componentTitle = event.getView().title().toString();
+            // Extract readable text from component
+            if (componentTitle.contains("CUSTOM KIT") || componentTitle.contains("Custom Kit")) {
+                title = "Custom Kit";
+            } else {
+                title = event.getView().getTitle();
+            }
         } catch (NoSuchMethodError e) {
             // Fallback to legacy method
             title = event.getView().getTitle();
         }
 
+        // Debug to find the actual title
+        if (plugin.getConfigManager().isDebugEnabled()) {
+            plugin.getLogger().info("Inventory clicked with title: " + componentTitle);
+            plugin.getLogger().info("Clicked slot: " + event.getSlot());
+        }
+
         // Handle custom items GUI clicks
-        if (title.contains("Custom Kit Items - Page")) {
+        if (title.contains("Custom Kit Items - Page") ||
+                componentTitle.contains("Custom Kit Items - Page")) {
             event.setCancelled(true);
 
             CustomItemsGUI gui = plugin.getGuiManager().getOpenGUI(player);
@@ -52,9 +67,42 @@ public class InventoryClickListener implements Listener {
             return;
         }
 
-        // Detect StrikePractice customkit GUI
-        if (isStrikePracticeCustomKitGUI(title)) {
-            handleStrikePracticeClick(event, player);
+        // INTERCEPT STRIKEPRACTICE'S ITEM SELECTION GUIs
+        if (title.equals("Custom Kit Helmets") ||
+                title.equals("Custom Kit Chestplates") ||
+                title.equals("Custom Kit Leggings") ||
+                title.equals("Custom Kit Boots") ||
+                title.equals("Custom Kit Swords") ||
+                title.equals("Custom Kit Items") ||
+                title.contains("Custom Kit ")) {
+
+            // Cancel StrikePractice's GUI and open ours instead
+            event.setCancelled(true);
+            player.closeInventory();
+
+            // Get the original slot they clicked in the main GUI
+            int originalSlot = plugin.getGuiManager().getSelectedSlot(player);
+            if (originalSlot == -1) {
+                // Try to determine slot from the category
+                originalSlot = event.getSlot(); // Use current slot as fallback
+            }
+
+            // Open our custom GUI
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                plugin.getGuiManager().openCustomItemsGUI(player, 1, originalSlot);
+            }, 1L);
+
+            return;
+        }
+
+        // Detect main StrikePractice customkit GUI
+        if (componentTitle.contains("CUSTOM KIT") || componentTitle.contains("á´„á´œêœ±á´›á´á´ á´‹Éªá´›")) {
+            // Store the slot when clicking in main customkit GUI
+            plugin.getGuiManager().setSelectedSlot(player, event.getSlot());
+
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Main customkit GUI clicked, slot: " + event.getSlot());
+            }
         }
     }
 

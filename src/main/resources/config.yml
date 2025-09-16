@@ -8,7 +8,7 @@ gui:
 
 # Settings
 settings:
-  debug: false
+  debug: true  # Enable for troubleshooting
   rename-timeout: 30  # Seconds before rename times out
   sounds:
     enabled: true

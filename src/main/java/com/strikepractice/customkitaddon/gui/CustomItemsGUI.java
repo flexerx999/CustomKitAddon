@@ -93,6 +93,16 @@ public class CustomItemsGUI {
     }
 
     public void handleClick(int slot) {
+        // Prevent item grabbing
+        if (slot < 45) {
+            // Clicked an item slot
+            ItemStack clickedItem = inventory.getItem(slot);
+            if (clickedItem != null && clickedItem.getType() != Material.AIR) {
+                selectItem(clickedItem);
+            }
+            return;
+        }
+
         // Check if clicking navigation buttons
         if (slot == 48 && page > 1) {
             // Previous page
