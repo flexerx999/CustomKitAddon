@@ -104,28 +104,27 @@ public class ChatListener implements Listener {
         try {
             ga.strikepractice.api.StrikePracticeAPI api = plugin.getStrikePracticeAPI();
 
-            // Get the custom kit
-            ga.strikepractice.battlekit.BattleKit customKit = api.getCustomKit();
+            // Get the editing kit or player kit
+            ga.strikepractice.battlekit.BattleKit kit = api.getEditingKit(player);
+            if (kit == null) {
+                kit = api.getKit(player);
+            }
 
-            if (customKit != null) {
+            if (kit != null) {
                 // Try to set the name using reflection
                 try {
-                    java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("name");
+                    java.lang.reflect.Field nameField = kit.getClass().getDeclaredField("name");
                     nameField.setAccessible(true);
-                    nameField.set(customKit, name);
-
-                    // Save the modified kit back
-                    api.setCustomKit(customKit);
+                    nameField.set(kit, name);
 
                     player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
                             .replace("%name%", name));
                 } catch (NoSuchFieldException e) {
                     // Try "displayName" field
                     try {
-                        java.lang.reflect.Field displayNameField = customKit.getClass().getDeclaredField("displayName");
+                        java.lang.reflect.Field displayNameField = kit.getClass().getDeclaredField("displayName");
                         displayNameField.setAccessible(true);
-                        displayNameField.set(customKit, name);
-                        api.setCustomKit(customKit);
+                        displayNameField.set(kit, name);
 
                         player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
                                 .replace("%name%", name));

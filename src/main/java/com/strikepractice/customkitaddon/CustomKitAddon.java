@@ -2,7 +2,6 @@ package com.strikepractice.customkitaddon;
 
 import com.strikepractice.customkitaddon.commands.AdminCommand;
 import com.strikepractice.customkitaddon.commands.CustomKitCommand;
-import com.strikepractice.customkitaddon.commands.TestCommand;
 import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;

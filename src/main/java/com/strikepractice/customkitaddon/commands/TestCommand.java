@@ -57,24 +57,30 @@ public class TestCommand implements CommandExecutor {
         try {
             ga.strikepractice.api.StrikePracticeAPI api = plugin.getStrikePracticeAPI();
 
-            player.sendMessage("§e=== Custom Kit Test ===");
+            player.sendMessage("§e=== Kit Test ===");
 
-            // Test getCustomKit()
-            ga.strikepractice.battlekit.BattleKit customKit = api.getCustomKit();
-            if (customKit != null) {
-                player.sendMessage("§aCustom kit found!");
+            // Test getEditingKit()
+            ga.strikepractice.battlekit.BattleKit editingKit = api.getEditingKit(player);
+            if (editingKit != null) {
+                player.sendMessage("§aEditing kit found!");
 
                 // Check all fields
                 player.sendMessage("§7Kit fields:");
-                for (java.lang.reflect.Field field : customKit.getClass().getDeclaredFields()) {
+                for (java.lang.reflect.Field field : editingKit.getClass().getDeclaredFields()) {
                     field.setAccessible(true);
                     try {
-                        Object value = field.get(customKit);
+                        Object value = field.get(editingKit);
                         player.sendMessage("§7- " + field.getName() + " = " + value);
                     } catch (Exception ignored) {}
                 }
             } else {
-                player.sendMessage("§cNo custom kit found");
+                player.sendMessage("§cNo editing kit found");
+            }
+
+            // Test getKit(player)
+            ga.strikepractice.battlekit.BattleKit kit = api.getKit(player);
+            if (kit != null) {
+                player.sendMessage("§aPlayer kit found!");
             }
 
         } catch (Exception e) {
