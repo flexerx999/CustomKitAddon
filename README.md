@@ -1,4 +1,4 @@
-# 🎉 CustomKitAddon - Strikepractice Customkit Silly Addon
+# 🎉 CustomKitAddon - Customkit Silly Addon
 
 **Multi-page custom items GUI** - 3 paginated pages with navigation, opened on clicking on blank slots in **/customkit**
 
