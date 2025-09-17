@@ -1,5 +1,5 @@
 # CustomKitAddon Configuration
-# Advanced Custom Kit addon for StrikePractice
+# Custom Kit addon for StrikePractice - Item Selection Only
 
 # GUI Settings
 gui:
@@ -14,12 +14,6 @@ settings:
     enabled: true
     select: "ENTITY_EXPERIENCE_ORB_PICKUP"
 
-# Enchantment Settings
-enchantments:
-  mending:
-    enabled: true
-    slot: 7  # Slot in the enchantment GUI for Mending option
-
 # Messages
 messages:
   no-permission: "&cYou don't have permission to use this!"
@@ -31,5 +25,4 @@ messages:
   rename-cancelled: "&cRename cancelled!"
   rename-too-long: "&cKit name is too long! Maximum 32 characters."
   rename-success: "&aKit renamed to: &f%name%"
-  rename-error: "&cFailed to rename kit!"
-  enchantments-applied: "&aEnchantments applied successfully!"
+  rename-error: "&cFailed to rename kit! Make sure you have a custom kit selected."

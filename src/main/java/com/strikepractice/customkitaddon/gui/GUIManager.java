@@ -2,7 +2,6 @@ package com.strikepractice.customkitaddon.gui;
 
 import com.strikepractice.customkitaddon.CustomKitAddon;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,17 +18,23 @@ public class GUIManager {
     }
 
     public void openCustomItemsGUI(Player player, int page, int selectedSlot) {
+        // Close any existing GUI first
+        if (openGuis.containsKey(player.getUniqueId())) {
+            openGuis.remove(player.getUniqueId());
+        }
+
         // Store the selected slot for later use
         selectedSlots.put(player.getUniqueId(), selectedSlot);
 
-        CustomItemsGUI gui = new CustomItemsGUI(plugin, player, page);
+        // Create and open the GUI
+        CustomItemsGUI gui = new CustomItemsGUI(plugin, player, page, selectedSlot);
         openGuis.put(player.getUniqueId(), gui);
         gui.open();
-    }
 
-    public void openEnchantmentGUI(Player player, ItemStack armorPiece) {
-        EnchantmentGUI gui = new EnchantmentGUI(plugin, player, armorPiece);
-        gui.open();
+        if (plugin.getConfigManager().isDebugEnabled()) {
+            plugin.getLogger().info("Opened CustomItemsGUI for " + player.getName() +
+                    " - Page: " + page + ", Slot: " + selectedSlot);
+        }
     }
 
     public void closeGUI(Player player) {

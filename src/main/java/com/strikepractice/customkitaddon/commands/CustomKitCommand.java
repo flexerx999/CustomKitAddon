@@ -60,13 +60,18 @@ public class CustomKitCommand implements Listener {
             if (args.length > 2) {
                 try {
                     page = Integer.parseInt(args[2]);
+                    page = Math.max(1, Math.min(page, 3)); // Ensure page is 1-3
                 } catch (NumberFormatException ignored) {
                     page = 1;
                 }
             }
 
-            // Open custom items GUI directly
-            plugin.getGuiManager().openCustomItemsGUI(player, page, -1);
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Opening custom items GUI directly - Page: " + page);
+            }
+
+            // Open custom items GUI directly with default slot 0
+            plugin.getGuiManager().openCustomItemsGUI(player, page, 0);
         }
     }
 

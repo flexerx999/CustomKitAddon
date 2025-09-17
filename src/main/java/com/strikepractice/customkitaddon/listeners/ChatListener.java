@@ -1,6 +1,9 @@
 package com.strikepractice.customkitaddon.listeners;
 
 import com.strikepractice.customkitaddon.CustomKitAddon;
+import ga.strikepractice.api.StrikePracticeAPI;
+import ga.strikepractice.battlekit.BattleKit;
+import ga.strikepractice.playerkits.PlayerKits;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,11 +27,6 @@ public class ChatListener implements Listener {
     }
 
     public void startRename(Player player) {
-        if (!player.hasPermission("customkit.rename")) {
-            player.sendMessage(plugin.getConfigManager().getMessage("no-permission"));
-            return;
-        }
-
         // Cancel any existing session
         cancelRename(player);
 
@@ -37,12 +35,19 @@ public class ChatListener implements Listener {
         session.task = Bukkit.getScheduler().runTaskLater(plugin, () -> {
             if (renameSessions.remove(player.getUniqueId()) != null) {
                 player.sendMessage(plugin.getConfigManager().getMessage("rename-timeout"));
+
                 // Reopen customkit GUI
-                player.performCommand("customkit");
+                Bukkit.getScheduler().runTask(plugin, () -> {
+                    player.performCommand("customkit");
+                });
             }
         }, plugin.getConfigManager().getRenameTimeout() * 20L);
 
         renameSessions.put(player.getUniqueId(), session);
+
+        if (plugin.getConfigManager().isDebugEnabled()) {
+            plugin.getLogger().info("Started rename session for " + player.getName());
+        }
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
@@ -54,7 +59,6 @@ public class ChatListener implements Listener {
         }
 
         event.setCancelled(true);
-
         String message = event.getMessage();
 
         // Handle cancel
@@ -69,7 +73,7 @@ public class ChatListener implements Listener {
             return;
         }
 
-        // Process the new name
+        // Process the new name (support color codes)
         String newName = message.replace("&", "§");
 
         // Validate name length
@@ -78,21 +82,25 @@ public class ChatListener implements Listener {
             return;
         }
 
-        // Apply the new name
-        Bukkit.getScheduler().runTask(plugin, () -> {
-            applyKitName(player, newName);
-        });
-
-        // Cancel the session
+        // Cancel the session first
         cancelRename(player);
 
-        player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
-                .replace("%name%", newName));
+        // Apply the new name on main thread
+        Bukkit.getScheduler().runTask(plugin, () -> {
+            boolean success = applyKitName(player, newName);
 
-        // Reopen customkit GUI
-        Bukkit.getScheduler().runTaskLater(plugin, () -> {
-            player.performCommand("customkit");
-        }, 10L);
+            if (success) {
+                player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
+                        .replace("%name%", newName));
+            } else {
+                player.sendMessage(plugin.getConfigManager().getMessage("rename-error"));
+            }
+
+            // Reopen customkit GUI after a short delay
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                player.performCommand("customkit");
+            }, 10L);
+        });
     }
 
     @EventHandler
@@ -100,53 +108,111 @@ public class ChatListener implements Listener {
         cancelRename(event.getPlayer());
     }
 
-    private void applyKitName(Player player, String name) {
+    private boolean applyKitName(Player player, String name) {
         try {
-            ga.strikepractice.api.StrikePracticeAPI api = plugin.getStrikePracticeAPI();
+            StrikePracticeAPI api = plugin.getStrikePracticeAPI();
+            PlayerKits playerKits = api.getPlayerKits(player);
 
-            // Get the editing kit or player kit
-            ga.strikepractice.battlekit.BattleKit kit = api.getEditingKit(player);
-            if (kit == null) {
-                kit = api.getKit(player);
+            // Get the current custom kit
+            BattleKit customKit = playerKits.getCustomKit();
+
+            if (customKit == null) {
+                if (plugin.getConfigManager().isDebugEnabled()) {
+                    plugin.getLogger().info("No custom kit found for renaming");
+                }
+                return false;
             }
 
-            if (kit != null) {
-                // Try to set the name using reflection
+            // Try multiple approaches to set the name
+            boolean success = false;
+
+            // Approach 1: Try setDisplayName method if it exists
+            try {
+                java.lang.reflect.Method setDisplayName = customKit.getClass().getMethod("setDisplayName", String.class);
+                setDisplayName.invoke(customKit, name);
+                success = true;
+                if (plugin.getConfigManager().isDebugEnabled()) {
+                    plugin.getLogger().info("Set kit name using setDisplayName method");
+                }
+            } catch (NoSuchMethodException e1) {
+                // Try setName method
                 try {
-                    java.lang.reflect.Field nameField = kit.getClass().getDeclaredField("name");
-                    nameField.setAccessible(true);
-                    nameField.set(kit, name);
-
-                    player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
-                            .replace("%name%", name));
-                } catch (NoSuchFieldException e) {
-                    // Try "displayName" field
+                    java.lang.reflect.Method setName = customKit.getClass().getMethod("setName", String.class);
+                    setName.invoke(customKit, name);
+                    success = true;
+                    if (plugin.getConfigManager().isDebugEnabled()) {
+                        plugin.getLogger().info("Set kit name using setName method");
+                    }
+                } catch (NoSuchMethodException e2) {
+                    // Try direct field access as last resort
                     try {
-                        java.lang.reflect.Field displayNameField = kit.getClass().getDeclaredField("displayName");
-                        displayNameField.setAccessible(true);
-                        displayNameField.set(kit, name);
-
-                        player.sendMessage(plugin.getConfigManager().getMessage("rename-success")
-                                .replace("%name%", name));
-                    } catch (Exception ex) {
-                        saveLocalKitName(player, name);
+                        java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("displayName");
+                        nameField.setAccessible(true);
+                        nameField.set(customKit, name);
+                        success = true;
+                        if (plugin.getConfigManager().isDebugEnabled()) {
+                            plugin.getLogger().info("Set kit name using displayName field");
+                        }
+                    } catch (NoSuchFieldException e3) {
+                        try {
+                            java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("name");
+                            nameField.setAccessible(true);
+                            nameField.set(customKit, name);
+                            success = true;
+                            if (plugin.getConfigManager().isDebugEnabled()) {
+                                plugin.getLogger().info("Set kit name using name field");
+                            }
+                        } catch (NoSuchFieldException e4) {
+                            // Try to find any field containing "name"
+                            for (java.lang.reflect.Field field : customKit.getClass().getDeclaredFields()) {
+                                if (field.getName().toLowerCase().contains("name") &&
+                                        field.getType() == String.class) {
+                                    field.setAccessible(true);
+                                    field.set(customKit, name);
+                                    success = true;
+                                    if (plugin.getConfigManager().isDebugEnabled()) {
+                                        plugin.getLogger().info("Set kit name using field: " + field.getName());
+                                    }
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
-            } else {
-                saveLocalKitName(player, name);
             }
+
+            // After setting the name, try to save/update the kit
+            if (success) {
+                try {
+                    // Try to find a save or update method
+                    java.lang.reflect.Method save = playerKits.getClass().getMethod("saveCustomKit", BattleKit.class);
+                    save.invoke(playerKits, customKit);
+                    if (plugin.getConfigManager().isDebugEnabled()) {
+                        plugin.getLogger().info("Saved kit using saveCustomKit method");
+                    }
+                } catch (NoSuchMethodException e) {
+                    // Try setCustomKit with index
+                    try {
+                        java.lang.reflect.Method setKit = playerKits.getClass().getMethod("setCustomKit", int.class, BattleKit.class);
+                        setKit.invoke(playerKits, 0, customKit);
+                        if (plugin.getConfigManager().isDebugEnabled()) {
+                            plugin.getLogger().info("Saved kit using setCustomKit method");
+                        }
+                    } catch (Exception ex) {
+                        if (plugin.getConfigManager().isDebugEnabled()) {
+                            plugin.getLogger().info("Could not find save method, changes may not persist");
+                        }
+                    }
+                }
+            }
+
+            return success;
 
         } catch (Exception e) {
             plugin.getLogger().warning("Failed to rename kit: " + e.getMessage());
-            saveLocalKitName(player, name);
+            e.printStackTrace();
+            return false;
         }
-    }
-
-    private void saveLocalKitName(Player player, String name) {
-        String path = "custom-kit-names." + player.getUniqueId().toString();
-        plugin.getConfigManager().getConfig().set(path, name);
-        plugin.getConfigManager().save();
-        player.sendMessage("§aKit name saved locally: " + name);
     }
 
     public void cancelRename(Player player) {

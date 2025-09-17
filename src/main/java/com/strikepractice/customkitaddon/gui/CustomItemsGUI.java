@@ -3,6 +3,9 @@ package com.strikepractice.customkitaddon.gui;
 import com.strikepractice.customkitaddon.CustomKitAddon;
 import com.strikepractice.customkitaddon.models.CustomItem;
 import com.strikepractice.customkitaddon.utils.ItemBuilder;
+import ga.strikepractice.api.StrikePracticeAPI;
+import ga.strikepractice.battlekit.BattleKit;
+import ga.strikepractice.playerkits.PlayerKits;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -17,12 +20,14 @@ public class CustomItemsGUI {
     private final CustomKitAddon plugin;
     private final Player player;
     private final int page;
+    private final int targetSlot;
     private Inventory inventory;
 
-    public CustomItemsGUI(CustomKitAddon plugin, Player player, int page) {
+    public CustomItemsGUI(CustomKitAddon plugin, Player player, int page, int targetSlot) {
         this.plugin = plugin;
         this.player = player;
-        this.page = Math.max(1, Math.min(page, 3)); // Ensure page is between 1-3
+        this.page = Math.max(1, Math.min(page, 3));
+        this.targetSlot = targetSlot;
     }
 
     public void open() {
@@ -32,7 +37,7 @@ public class CustomItemsGUI {
         // Fill with items
         fillItems();
 
-        // Add navigation and decoration
+        // Add navigation buttons at bottom
         addBottomBar();
 
         player.openInventory(inventory);
@@ -45,7 +50,7 @@ public class CustomItemsGUI {
             if (customItem.hasSpecificSlot() && customItem.getSlot() < 45) {
                 inventory.setItem(customItem.getSlot(), customItem.getItemStack());
             } else {
-                // Find first empty slot in main area (0-44)
+                // Find first empty slot
                 for (int i = 0; i < 45; i++) {
                     if (inventory.getItem(i) == null) {
                         inventory.setItem(i, customItem.getItemStack());
@@ -57,7 +62,7 @@ public class CustomItemsGUI {
     }
 
     private void addBottomBar() {
-        // Fill bottom row with gray stained glass
+        // Fill bottom row with gray glass
         ItemStack grayGlass = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE)
                 .setName("§7")
                 .build();
@@ -66,7 +71,7 @@ public class CustomItemsGUI {
             inventory.setItem(i, grayGlass);
         }
 
-        // Previous page button (slot 48 - 4th slot of bottom row)
+        // Previous page button (slot 48)
         if (page > 1) {
             ItemStack prevButton = new ItemBuilder(Material.ARROW)
                     .setName("§a« Previous Page")
@@ -75,14 +80,14 @@ public class CustomItemsGUI {
             inventory.setItem(48, prevButton);
         }
 
-        // Page indicator (slot 49 - middle)
+        // Page indicator (slot 49)
         ItemStack pageIndicator = new ItemBuilder(Material.BOOK)
                 .setName("§ePage " + page + " of 3")
                 .setLore("§7Browse custom kit items")
                 .build();
         inventory.setItem(49, pageIndicator);
 
-        // Next page button (slot 50 - 6th slot of bottom row)
+        // Next page button (slot 50)
         if (page < 3) {
             ItemStack nextButton = new ItemBuilder(Material.ARROW)
                     .setName("§aNext Page »")
@@ -93,82 +98,141 @@ public class CustomItemsGUI {
     }
 
     public void handleClick(int slot) {
-        // Prevent item grabbing
-        if (slot < 45) {
-            // Clicked an item slot
-            ItemStack clickedItem = inventory.getItem(slot);
-            if (clickedItem != null && clickedItem.getType() != Material.AIR) {
-                selectItem(clickedItem);
+        if (slot < 0 || slot >= 54) return;
+
+        // Navigation buttons
+        if (slot == 48 && page > 1) {
+            // Previous page
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Navigating to previous page: " + (page - 1));
             }
+
+            // Close current inventory first
+            player.closeInventory();
+
+            // Open new page
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                plugin.getGuiManager().openCustomItemsGUI(player, page - 1, targetSlot);
+            }, 1L);
+
+            playSound();
             return;
         }
 
-        // Check if clicking navigation buttons
-        if (slot == 48 && page > 1) {
-            // Previous page
-            plugin.getGuiManager().openCustomItemsGUI(player, page - 1,
-                    plugin.getGuiManager().getSelectedSlot(player));
-            playSound();
-        } else if (slot == 50 && page < 3) {
+        if (slot == 50 && page < 3) {
             // Next page
-            plugin.getGuiManager().openCustomItemsGUI(player, page + 1,
-                    plugin.getGuiManager().getSelectedSlot(player));
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Navigating to next page: " + (page + 1));
+            }
+
+            // Close current inventory first
+            player.closeInventory();
+
+            // Open new page
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                plugin.getGuiManager().openCustomItemsGUI(player, page + 1, targetSlot);
+            }, 1L);
+
             playSound();
-        } else if (slot < 45) {
-            // Clicked an item slot
+            return;
+        }
+
+        // Item selection (slots 0-44)
+        if (slot < 45) {
             ItemStack clickedItem = inventory.getItem(slot);
-            if (clickedItem != null && clickedItem.getType() != Material.AIR) {
+            if (clickedItem != null && clickedItem.getType() != Material.AIR &&
+                    clickedItem.getType() != Material.GRAY_STAINED_GLASS_PANE) {
+
+                if (plugin.getConfigManager().isDebugEnabled()) {
+                    plugin.getLogger().info("Selected item: " + clickedItem.getType() +
+                            " for slot " + targetSlot);
+                }
+
                 selectItem(clickedItem);
             }
         }
     }
 
     private void selectItem(ItemStack item) {
-        int targetSlot = plugin.getGuiManager().getSelectedSlot(player);
+        // targetSlot is already the INVENTORY slot (0-35) thanks to our mapping
+        if (targetSlot >= 0 && targetSlot <= 35) {
+            // Apply item to the kit at the mapped inventory slot
+            boolean success = applyItemToKit(item, targetSlot);
 
-        if (targetSlot >= 0) {
-            // Apply item to the selected slot in StrikePractice custom kit
-            applyItemToKit(item, targetSlot);
+            if (success) {
+                // Play sound and close
+                playSound();
+                player.closeInventory();
 
-            // Play sound and close
-            playSound();
-            player.closeInventory();
+                // Send success message
+                String itemName = item.hasItemMeta() && item.getItemMeta().hasDisplayName()
+                        ? item.getItemMeta().getDisplayName()
+                        : item.getType().toString();
 
-            // Reopen StrikePractice customkit GUI
-            Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                player.performCommand("customkit");
-            }, 1L);
+                player.sendMessage(plugin.getConfigManager().getMessage("item-selected")
+                        .replace("%item%", itemName));
+
+                // Reopen StrikePractice customkit GUI
+                Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                    player.performCommand("customkit");
+                }, 2L);
+            } else {
+                player.sendMessage(plugin.getConfigManager().getMessage("error-applying-item"));
+            }
         }
     }
 
-    private void applyItemToKit(ItemStack item, int slot) {
+    private boolean applyItemToKit(ItemStack item, int slot) {
         try {
-            // Get the player's custom kit from StrikePractice API
-            // This is a simplified version - you may need to adjust based on actual API
-            ga.strikepractice.api.StrikePracticeAPI api = plugin.getStrikePracticeAPI();
+            StrikePracticeAPI api = plugin.getStrikePracticeAPI();
+            PlayerKits playerKits = api.getPlayerKits(player);
 
-            // Update the kit slot
-            // Note: This assumes there's a method to update custom kits
-            // You may need to adjust based on the actual StrikePractice API
+            // Get the current custom kit (using getCustomKit() without parameters)
+            BattleKit customKit = playerKits.getCustomKit();
 
-            player.sendMessage(plugin.getConfigManager().getMessage("item-selected")
-                    .replace("%item%", item.getType().name()));
+            if (customKit == null) {
+                if (plugin.getConfigManager().isDebugEnabled()) {
+                    plugin.getLogger().info("No custom kit found for player");
+                }
+                return false;
+            }
+
+            // Get the kit inventory
+            List<ItemStack> kitItems = customKit.getInventory();
+
+            // Ensure list is large enough
+            while (kitItems.size() <= slot) {
+                kitItems.add(new ItemStack(Material.AIR));
+            }
+
+            // Set the item at the specified INVENTORY slot (0-35)
+            kitItems.set(slot, item.clone());
+
+            // The changes should be automatically saved since we're modifying the list directly
+
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Successfully applied " + item.getType() + " to inventory slot " + slot);
+            }
+
+            return true;
 
         } catch (Exception e) {
             plugin.getLogger().warning("Failed to apply item to kit: " + e.getMessage());
-            player.sendMessage(plugin.getConfigManager().getMessage("error-applying-item"));
+            e.printStackTrace();
+            return false;
         }
     }
 
     private void playSound() {
         if (plugin.getConfigManager().isSoundEnabled()) {
             try {
-                Sound sound = Sound.valueOf(plugin.getConfigManager().getSelectSound());
-                player.playSound(player.getLocation(), sound, 1.0f, 1.0f);
-            } catch (Exception ignored) {
-                // Invalid sound, ignore
-            }
+                player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f, 1.0f);
+            } catch (Exception ignored) {}
         }
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 
     public int getPage() {

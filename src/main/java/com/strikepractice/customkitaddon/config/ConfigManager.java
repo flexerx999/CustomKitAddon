@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.UUID;
 
 public class ConfigManager {
 
@@ -74,19 +73,7 @@ public class ConfigManager {
         return config.getInt("settings.rename-timeout", 30);
     }
 
-    public boolean isMendingEnabled() {
-        return config.getBoolean("enchantments.mending.enabled", true);
-    }
-
-    public int getMendingSlot() {
-        return config.getInt("enchantments.mending.slot", 7);
-    }
-
     public FileConfiguration getConfig() {
         return config;
-    }
-
-    public String getCustomKitName(UUID playerUuid) {
-        return config.getString("custom-kit-names." + playerUuid.toString(), "Custom Kit");
     }
 }
