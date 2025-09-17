@@ -9,9 +9,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 public class StrikePracticeListener implements Listener {
 
     private final CustomKitAddon plugin;
+    private final Set<UUID> bypassPlayers = new HashSet<>();
 
     public StrikePracticeListener(CustomKitAddon plugin) {
         this.plugin = plugin;
@@ -21,8 +26,15 @@ public class StrikePracticeListener implements Listener {
     public void onInventoryOpen(InventoryOpenEvent event) {
         if (!(event.getPlayer() instanceof Player)) return;
 
-        String title = event.getView().getTitle();
         Player player = (Player) event.getPlayer();
+
+        // Skip if we're opening our own GUI
+        if (bypassPlayers.contains(player.getUniqueId())) {
+            bypassPlayers.remove(player.getUniqueId());
+            return;
+        }
+
+        String title = event.getView().getTitle();
 
         // Intercept StrikePractice's item selection GUIs
         if (title.contains("Custom Kit") &&
@@ -35,6 +47,9 @@ public class StrikePracticeListener implements Listener {
             // Get the slot that was clicked in the main GUI
             int slot = plugin.getGuiManager().getSelectedSlot(player);
             if (slot == -1) slot = 0;
+
+            // Mark player to bypass next check
+            bypassPlayers.add(player.getUniqueId());
 
             // Open our GUI instead
             plugin.getGuiManager().openCustomItemsGUI(player, 1, slot);
