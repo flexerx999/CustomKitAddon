@@ -87,9 +87,12 @@ public class InventoryClickListener implements Listener {
                 originalSlot = event.getSlot(); // Use current slot as fallback
             }
 
+            // Make it final for lambda
+            final int finalSlot = originalSlot;
+
             // Open our custom GUI
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                plugin.getGuiManager().openCustomItemsGUI(player, 1, originalSlot);
+                plugin.getGuiManager().openCustomItemsGUI(player, 1, finalSlot);
             }, 1L);
 
             return;
