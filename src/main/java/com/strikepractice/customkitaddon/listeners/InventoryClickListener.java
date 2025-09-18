@@ -69,11 +69,8 @@ public class InventoryClickListener implements Listener {
         // Detect main StrikePractice customkit GUI - be more inclusive with title detection
         // But exclude our own GUI
         if (!title.contains("Custom Kit Items - Page") &&
-                !componentTitle.contains("Custom Kit Items - Page") &&
-                (componentTitle.toUpperCase().contains("CUSTOM") ||
-                        title.toUpperCase().contains("CUSTOM") ||
-                        title.contains("ᴄᴜꜱᴛᴏᴍ") ||
-                        componentTitle.contains("ᴄᴜꜱᴛᴏᴍ"))) {
+            !componentTitle.contains("Custom Kit Items - Page") &&
+            (title.contains("ᴄᴜꜱᴛᴏᴍ") || componentTitle.contains("ᴄᴜꜱᴛᴏᴍ"))) {
 
             if (plugin.getConfigManager().isDebugEnabled()) {
                 plugin.getLogger().info("StrikePractice GUI clicked at slot: " + slot);
@@ -130,10 +127,13 @@ public class InventoryClickListener implements Listener {
                             " (maps to inventory slot " + inventorySlot + ")");
                 }
 
+                // Force close inventory immediately
+                player.closeInventory();
+
                 // Open items selection GUI with the mapped inventory slot
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
                     plugin.getGuiManager().openCustomItemsGUI(player, 1, inventorySlot);
-                }, 1L);
+                }, 5L);
 
             }
         }
