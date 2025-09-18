@@ -110,7 +110,7 @@ public class CustomItemsGUI {
             // Close current inventory first
             player.closeInventory();
 
-            // Open new page with a longer delay
+            // Open new page with a delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 plugin.getGuiManager().openCustomItemsGUI(player, page - 1, targetSlot);
             }, 2L);
@@ -128,7 +128,7 @@ public class CustomItemsGUI {
             // Close current inventory first
             player.closeInventory();
 
-            // Open new page with a longer delay
+            // Open new page with a delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 plugin.getGuiManager().openCustomItemsGUI(player, page + 1, targetSlot);
             }, 2L);
@@ -169,8 +169,9 @@ public class CustomItemsGUI {
                         ? item.getItemMeta().getDisplayName()
                         : item.getType().toString();
 
-                player.sendMessage(plugin.getConfigManager().getMessage("item-selected")
-                        .replace("%item%", itemName));
+                String message = plugin.getConfigManager().getMessage("item-selected")
+                        .replace("%item%", itemName);
+                player.sendMessage(message);
 
                 // Reopen StrikePractice customkit GUI
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
@@ -187,7 +188,7 @@ public class CustomItemsGUI {
             StrikePracticeAPI api = plugin.getStrikePracticeAPI();
             PlayerKits playerKits = api.getPlayerKits(player);
 
-            // Get the current custom kit (using getCustomKit() without parameters)
+            // Get the current custom kit
             BattleKit customKit = playerKits.getCustomKit();
 
             if (customKit == null) {
