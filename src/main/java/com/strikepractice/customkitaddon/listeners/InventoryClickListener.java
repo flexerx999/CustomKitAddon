@@ -17,7 +17,7 @@ public class InventoryClickListener implements Listener {
         this.plugin = plugin;
     }
 
-    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = false)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onInventoryClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player)) return;
 
@@ -25,7 +25,7 @@ public class InventoryClickListener implements Listener {
         int slot = event.getSlot();
 
         // Get title - handle both old and new API
-        String title = "";
+        String title;
         String componentTitle = "";
         try {
             // Try new API first (1.20.5+)
@@ -43,14 +43,10 @@ public class InventoryClickListener implements Listener {
         }
 
         // Handle our custom items GUI clicks FIRST (highest priority)
-        if (title.contains("Custom Kit Items - Page") ||
-                componentTitle.contains("Custom Kit Items - Page")) {
+        CustomItemsGUI gui = plugin.getGuiManager().getOpenGUI(player);
+        if (gui != null) {
             event.setCancelled(true);
-
-            CustomItemsGUI gui = plugin.getGuiManager().getOpenGUI(player);
-            if (gui != null) {
-                gui.handleClick(slot);
-            }
+            gui.handleClick(slot);
             return;
         }
 
@@ -76,6 +72,7 @@ public class InventoryClickListener implements Listener {
                 !componentTitle.contains("Custom Kit Items - Page") &&
                 (componentTitle.toUpperCase().contains("CUSTOM") ||
                         title.toUpperCase().contains("CUSTOM") ||
+                        title.contains("ᴄᴜꜱᴛᴏᴍ") ||
                         componentTitle.contains("ᴄᴜꜱᴛᴏᴍ"))) {
 
             if (plugin.getConfigManager().isDebugEnabled()) {
@@ -138,7 +135,6 @@ public class InventoryClickListener implements Listener {
                     plugin.getGuiManager().openCustomItemsGUI(player, 1, inventorySlot);
                 }, 1L);
 
-                return;
             }
         }
     }

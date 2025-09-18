@@ -20,9 +20,7 @@ public class GUIManager {
 
     public void openCustomItemsGUI(Player player, int page, int selectedSlot) {
         // Close any existing GUI first
-        if (openGuis.containsKey(player.getUniqueId())) {
-            openGuis.remove(player.getUniqueId());
-        }
+        openGuis.remove(player.getUniqueId());
 
         // Store the selected slot for later use
         selectedSlots.put(player.getUniqueId(), selectedSlot);

@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 
 import java.util.HashSet;
@@ -54,6 +55,20 @@ public class StrikePracticeListener implements Listener {
             // Open our GUI instead
             plugin.getGuiManager().openCustomItemsGUI(player, 1, slot);
         }
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onInventoryClose(InventoryCloseEvent event) {
+        if (!(event.getPlayer() instanceof Player)) return;
+
+        Player player = (Player) event.getPlayer();
+
+        // Clean up any open GUIs
+        if (plugin.getGuiManager().hasOpenGUI(player)) {
+            plugin.getGuiManager().closeGUI(player);
+        }
+
+        plugin.getChatListener().cancelRename(player);
     }
 
     @EventHandler
