@@ -110,10 +110,10 @@ public class CustomItemsGUI {
             // Close current inventory first
             player.closeInventory();
 
-            // Open new page
+            // Open new page with a longer delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 plugin.getGuiManager().openCustomItemsGUI(player, page - 1, targetSlot);
-            }, 1L);
+            }, 2L);
 
             playSound();
             return;
@@ -128,10 +128,10 @@ public class CustomItemsGUI {
             // Close current inventory first
             player.closeInventory();
 
-            // Open new page
+            // Open new page with a longer delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 plugin.getGuiManager().openCustomItemsGUI(player, page + 1, targetSlot);
-            }, 1L);
+            }, 2L);
 
             playSound();
             return;

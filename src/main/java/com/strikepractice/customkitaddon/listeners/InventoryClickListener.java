@@ -22,6 +22,7 @@ public class InventoryClickListener implements Listener {
         if (!(event.getWhoClicked() instanceof Player)) return;
 
         Player player = (Player) event.getWhoClicked();
+        int slot = event.getSlot();
 
         // Get title - handle both old and new API
         String title = "";
@@ -38,7 +39,7 @@ public class InventoryClickListener implements Listener {
         // Debug logging
         if (plugin.getConfigManager().isDebugEnabled()) {
             plugin.getLogger().info("Inventory clicked with title: " + componentTitle);
-            plugin.getLogger().info("Clicked slot: " + event.getSlot());
+            plugin.getLogger().info("Clicked slot: " + slot);
         }
 
         // Handle our custom items GUI clicks FIRST (highest priority)
@@ -48,7 +49,7 @@ public class InventoryClickListener implements Listener {
 
             CustomItemsGUI gui = plugin.getGuiManager().getOpenGUI(player);
             if (gui != null) {
-                gui.handleClick(event.getSlot());
+                gui.handleClick(slot);
             }
             return;
         }
@@ -59,18 +60,14 @@ public class InventoryClickListener implements Listener {
                 plugin.getLogger().info("Detected Custom Kit Icon GUI - checking for rename");
             }
 
-            // Check if any slot was clicked in this GUI
-            if (event.getSlot() >= 0) {
-                event.setCancelled(true);
+            // Force close inventory and start rename process
+            event.setCancelled(true);
+            player.closeInventory();
 
-                // Force close and start rename
-                player.closeInventory();
-
-                Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                    startRenameProcess(player);
-                }, 2L);
-                return;
-            }
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                startRenameProcess(player);
+            }, 2L);
+            return;
         }
 
         // Detect main StrikePractice customkit GUI - be more inclusive with title detection
@@ -81,14 +78,21 @@ public class InventoryClickListener implements Listener {
                         title.toUpperCase().contains("CUSTOM") ||
                         componentTitle.contains("ᴄᴜꜱᴛᴏᴍ"))) {
 
-            int slot = event.getSlot();
-
             if (plugin.getConfigManager().isDebugEnabled()) {
                 plugin.getLogger().info("StrikePractice GUI clicked at slot: " + slot);
             }
 
-            // IGNORE slots 0-3 (armor) and 5-17 (other items) completely
-            if ((slot >= 0 && slot <= 3) || (slot >= 5 && slot <= 17)) {
+            // COMPLETELY IGNORE armor slots (0-3) - don't even process them
+            if (slot >= 0 && slot <= 3) {
+                if (plugin.getConfigManager().isDebugEnabled()) {
+                    plugin.getLogger().info("Ignoring armor slot " + slot + " (handled by StrikePractice)");
+                }
+                // DO NOT cancel the event - let StrikePractice handle it
+                return;
+            }
+
+            // Handle other slots (5-17) as before
+            if (slot >= 5 && slot <= 17) {
                 // Do nothing - let StrikePractice handle these slots
                 if (plugin.getConfigManager().isDebugEnabled()) {
                     plugin.getLogger().info("Ignoring click on slot " + slot + " (handled by StrikePractice)");
@@ -110,7 +114,7 @@ public class InventoryClickListener implements Listener {
                 // Start rename process after ensuring closure
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
                     startRenameProcess(player);
-                }, 2L);
+                }, 5L); // Increased delay to ensure GUI is fully closed
                 return;
             }
 

@@ -1,6 +1,7 @@
 package com.strikepractice.customkitaddon.gui;
 
 import com.strikepractice.customkitaddon.CustomKitAddon;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -26,15 +27,34 @@ public class GUIManager {
         // Store the selected slot for later use
         selectedSlots.put(player.getUniqueId(), selectedSlot);
 
-        // Create and open the GUI
-        CustomItemsGUI gui = new CustomItemsGUI(plugin, player, page, selectedSlot);
-        openGuis.put(player.getUniqueId(), gui);
-        gui.open();
+        // Create and open the GUI - ensure page is properly set
+        final int finalPage = Math.max(1, Math.min(page, 3)); // Ensure page is between 1-3
+        final int finalSelectedSlot = selectedSlot;
 
-        if (plugin.getConfigManager().isDebugEnabled()) {
-            plugin.getLogger().info("Opened CustomItemsGUI for " + player.getName() +
-                    " - Page: " + page + ", Slot: " + selectedSlot);
+        // Clear any pending tasks for this player to prevent multiple GUIs opening
+        if (player.hasMetadata("customkit_pending_task")) {
+            int taskId = player.getMetadata("customkit_pending_task").get(0).asInt();
+            Bukkit.getScheduler().cancelTask(taskId);
+            player.removeMetadata("customkit_pending_task", plugin);
         }
+
+        // Add a small delay before opening the new GUI to prevent overlap
+        int taskId = Bukkit.getScheduler().runTaskLater(plugin, () -> {
+            CustomItemsGUI gui = new CustomItemsGUI(plugin, player, finalPage, finalSelectedSlot);
+            openGuis.put(player.getUniqueId(), gui);
+            gui.open();
+
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Opened CustomItemsGUI for " + player.getName() +
+                        " - Page: " + finalPage + ", Slot: " + finalSelectedSlot);
+            }
+
+            // Remove the metadata after task completes
+            player.removeMetadata("customkit_pending_task", plugin);
+        }, 3L).getTaskId();
+
+        // Store the task ID in metadata
+        player.setMetadata("customkit_pending_task", new org.bukkit.metadata.FixedMetadataValue(plugin, taskId));
     }
 
     public void closeGUI(Player player) {

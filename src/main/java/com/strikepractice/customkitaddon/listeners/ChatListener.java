@@ -30,6 +30,9 @@ public class ChatListener implements Listener {
         // Cancel any existing session
         cancelRename(player);
 
+        // Force close any open inventory first
+        player.closeInventory();
+
         // Create new session with timeout
         RenameSession session = new RenameSession();
         session.task = Bukkit.getScheduler().runTaskLater(plugin, () -> {
@@ -44,6 +47,11 @@ public class ChatListener implements Listener {
         }, plugin.getConfigManager().getRenameTimeout() * 20L);
 
         renameSessions.put(player.getUniqueId(), session);
+
+        // Send prompt message immediately
+        player.sendMessage(plugin.getConfigManager().getMessage("rename-prompt"));
+        // Remove the cancel message as requested
+        // player.sendMessage(plugin.getConfigManager().getMessage("rename-cancel-info"));
 
         if (plugin.getConfigManager().isDebugEnabled()) {
             plugin.getLogger().info("Started rename session for " + player.getName());
@@ -99,7 +107,7 @@ public class ChatListener implements Listener {
             // Reopen customkit GUI after a short delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 player.performCommand("customkit");
-            }, 10L);
+            }, 5L); // Increased delay to ensure proper GUI opening
         });
     }
 
@@ -126,41 +134,41 @@ public class ChatListener implements Listener {
             // Try multiple approaches to set the name
             boolean success = false;
 
-            // Approach 1: Try setDisplayName method if it exists
+            // Approach 1: Try setName method first (most reliable)
             try {
-                java.lang.reflect.Method setDisplayName = customKit.getClass().getMethod("setDisplayName", String.class);
-                setDisplayName.invoke(customKit, name);
+                java.lang.reflect.Method setName = customKit.getClass().getMethod("setName", String.class);
+                setName.invoke(customKit, name);
                 success = true;
                 if (plugin.getConfigManager().isDebugEnabled()) {
-                    plugin.getLogger().info("Set kit name using setDisplayName method");
+                    plugin.getLogger().info("Set kit name using setName method");
                 }
             } catch (NoSuchMethodException e1) {
-                // Try setName method
+                // Try setDisplayName method
                 try {
-                    java.lang.reflect.Method setName = customKit.getClass().getMethod("setName", String.class);
-                    setName.invoke(customKit, name);
+                    java.lang.reflect.Method setDisplayName = customKit.getClass().getMethod("setDisplayName", String.class);
+                    setDisplayName.invoke(customKit, name);
                     success = true;
                     if (plugin.getConfigManager().isDebugEnabled()) {
-                        plugin.getLogger().info("Set kit name using setName method");
+                        plugin.getLogger().info("Set kit name using setDisplayName method");
                     }
                 } catch (NoSuchMethodException e2) {
                     // Try direct field access as last resort
                     try {
-                        java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("displayName");
+                        java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("name");
                         nameField.setAccessible(true);
                         nameField.set(customKit, name);
                         success = true;
                         if (plugin.getConfigManager().isDebugEnabled()) {
-                            plugin.getLogger().info("Set kit name using displayName field");
+                            plugin.getLogger().info("Set kit name using name field");
                         }
                     } catch (NoSuchFieldException e3) {
                         try {
-                            java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("name");
+                            java.lang.reflect.Field nameField = customKit.getClass().getDeclaredField("displayName");
                             nameField.setAccessible(true);
                             nameField.set(customKit, name);
                             success = true;
                             if (plugin.getConfigManager().isDebugEnabled()) {
-                                plugin.getLogger().info("Set kit name using name field");
+                                plugin.getLogger().info("Set kit name using displayName field");
                             }
                         } catch (NoSuchFieldException e4) {
                             // Try to find any field containing "name"
@@ -181,35 +189,41 @@ public class ChatListener implements Listener {
                 }
             }
 
-            // After setting the name, try to save/update the kit
+            // After setting the name, save the kit
             if (success) {
+                // Use the savePlayerKitsToFile method directly
+                playerKits.savePlayerKitsToFile();
+
+                // Try additional save methods if available
                 try {
-                    // Try to find a save or update method
-                    java.lang.reflect.Method save = playerKits.getClass().getMethod("saveCustomKit", BattleKit.class);
-                    save.invoke(playerKits, customKit);
+                    java.lang.reflect.Method saveMethod = playerKits.getClass().getMethod("save");
+                    saveMethod.invoke(playerKits);
                     if (plugin.getConfigManager().isDebugEnabled()) {
-                        plugin.getLogger().info("Saved kit using saveCustomKit method");
+                        plugin.getLogger().info("Saved kit using save method");
                     }
-                } catch (NoSuchMethodException e) {
-                    // Try setCustomKit with index
-                    try {
-                        java.lang.reflect.Method setKit = playerKits.getClass().getMethod("setCustomKit", int.class, BattleKit.class);
-                        setKit.invoke(playerKits, 0, customKit);
-                        if (plugin.getConfigManager().isDebugEnabled()) {
-                            plugin.getLogger().info("Saved kit using setCustomKit method");
-                        }
-                    } catch (Exception ex) {
-                        if (plugin.getConfigManager().isDebugEnabled()) {
-                            plugin.getLogger().info("Could not find save method, changes may not persist");
-                        }
+                } catch (Exception e) {
+                    // Ignore if not available
+                }
+
+                // Try to call any update methods on the API
+                try {
+                    java.lang.reflect.Method updateMethod = api.getClass().getMethod("updatePlayerKits", Player.class);
+                    updateMethod.invoke(api, player);
+                    if (plugin.getConfigManager().isDebugEnabled()) {
+                        plugin.getLogger().info("Updated player kits using API");
                     }
+                } catch (Exception e) {
+                    // Ignore if not available
+                }
+
+                if (plugin.getConfigManager().isDebugEnabled()) {
+                    plugin.getLogger().info("Saved kit using savePlayerKitsToFile method");
                 }
             }
 
             return success;
-
         } catch (Exception e) {
-            plugin.getLogger().warning("Failed to rename kit: " + e.getMessage());
+            plugin.getLogger().warning("Error renaming kit: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
