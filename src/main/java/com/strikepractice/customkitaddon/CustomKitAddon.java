@@ -2,7 +2,6 @@ package com.strikepractice.customkitaddon;
 
 import com.strikepractice.customkitaddon.commands.AdminCommand;
 import com.strikepractice.customkitaddon.commands.CustomKitCommand;
-import com.strikepractice.customkitaddon.commands.TestCommand;
 import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;
@@ -77,8 +76,6 @@ public class CustomKitAddon extends JavaPlugin {
         // Admin command
         getCommand("customkitadmin").setExecutor(new AdminCommand(this));
 
-        // Test/debug command
-        getCommand("cktest").setExecutor(new TestCommand(this));
 
         // Register customkit interceptor
         customKitCommand = new CustomKitCommand(this);
