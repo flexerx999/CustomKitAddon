@@ -72,6 +72,8 @@ test-server/
 build/
 *.class
 
+.idea/
+
 # Gradle (if switching from Maven)
 .gradle/
 gradle/
