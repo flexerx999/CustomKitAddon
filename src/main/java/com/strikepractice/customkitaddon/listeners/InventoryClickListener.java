@@ -62,7 +62,7 @@ public class InventoryClickListener implements Listener {
 
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 startRenameProcess(player);
-            }, 2L);
+            }, 1L);
             return;
         }
 

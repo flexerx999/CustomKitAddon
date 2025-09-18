@@ -113,7 +113,7 @@ public class CustomItemsGUI {
             // Open new page with a delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 plugin.getGuiManager().openCustomItemsGUI(player, page - 1, targetSlot);
-            }, 2L);
+            }, 1L);
 
             playSound();
             return;
@@ -131,7 +131,7 @@ public class CustomItemsGUI {
             // Open new page with a delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 plugin.getGuiManager().openCustomItemsGUI(player, page + 1, targetSlot);
-            }, 2L);
+            }, 1L);
 
             playSound();
             return;
@@ -176,7 +176,7 @@ public class CustomItemsGUI {
                 // Reopen StrikePractice customkit GUI
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
                     player.performCommand("customkit");
-                }, 2L);
+                }, 1L);
             } else {
                 player.sendMessage(plugin.getConfigManager().getMessage("error-applying-item"));
             }
