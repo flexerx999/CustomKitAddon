@@ -1,6 +1,6 @@
 # 🎉 CustomKitAddon - Customkit Silly Addon
 
-**Multi-page custom items GUI** - 7 pages with navigation, opened on clicking on blank slots in **/customkit**
+**Multi-page custom items GUI** - customisable amount of pages with navigation, opened on clicking on blank slots in **/customkit**
 
 **Admin commands** - /customkitadmin add and /customkitadmin reload
 
