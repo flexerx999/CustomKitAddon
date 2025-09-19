@@ -59,7 +59,7 @@ public class CustomKitCommand implements Listener {
 
             if (args.length > 2) {
                 try {
-                    page = Math.max(1, Math.min(Integer.parseInt(args[2]), 7)); // Updated from 3 to 7
+                    page = Math.max(1, Math.min(Integer.parseInt(args[2]), plugin.getConfigManager().getTotalPages()));
                 } catch (NumberFormatException ignored) {
                 }
             }
