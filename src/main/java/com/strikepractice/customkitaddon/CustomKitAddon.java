@@ -11,6 +11,7 @@ import com.strikepractice.customkitaddon.listeners.StrikePracticeListener;
 import ga.strikepractice.StrikePractice;
 import ga.strikepractice.api.StrikePracticeAPI;
 import org.bukkit.Bukkit;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CustomKitAddon extends JavaPlugin {
@@ -70,6 +71,7 @@ public class CustomKitAddon extends JavaPlugin {
             chatListener.cleanup();
         }
         getLogger().info("CustomKitAddon has been disabled!");
+        HandlerList.unregisterAll(this);
     }
 
     private void registerCommands() {

@@ -10,6 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -88,7 +89,7 @@ public class CustomItemsGUI {
         inventory.setItem(49, pageIndicator);
 
         // Next page button (slot 50)
-        if (page < 3) {
+        if (page < plugin.getItemsConfig().getTotalPages()) {
             ItemStack nextButton = new ItemBuilder(Material.ARROW)
                     .setName("§aNext Page »")
                     .setLore("§7Click to go to page " + (page + 1))
@@ -107,12 +108,12 @@ public class CustomItemsGUI {
                 plugin.getLogger().info("Navigating to previous page: " + (page - 1));
             }
 
-            // Close current inventory first
-            player.closeInventory();
-
             // Open new page with a delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                plugin.getGuiManager().openCustomItemsGUI(player, page - 1, targetSlot);
+                player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
+                Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                    plugin.getGuiManager().openCustomItemsGUI(player, page - 1, targetSlot);
+                }, 1L);
             }, 1L);
 
             playSound();
@@ -125,12 +126,12 @@ public class CustomItemsGUI {
                 plugin.getLogger().info("Navigating to next page: " + (page + 1));
             }
 
-            // Close current inventory first
-            player.closeInventory();
-
             // Open new page with a delay
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                plugin.getGuiManager().openCustomItemsGUI(player, page + 1, targetSlot);
+                player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
+                Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                    plugin.getGuiManager().openCustomItemsGUI(player, page + 1, targetSlot);
+                }, 1L);
             }, 1L);
 
             playSound();
@@ -162,7 +163,7 @@ public class CustomItemsGUI {
             if (success) {
                 // Play sound and close
                 playSound();
-                player.closeInventory();
+                player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
 
                 // Send success message
                 String itemName = item.hasItemMeta() && item.getItemMeta().hasDisplayName()
@@ -175,6 +176,7 @@ public class CustomItemsGUI {
 
                 // Reopen StrikePractice customkit GUI
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                    plugin.getGuiManager().closeGUI(player);
                     player.performCommand("customkit");
                 }, 1L);
             } else {

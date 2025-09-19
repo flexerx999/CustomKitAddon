@@ -9,6 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -46,7 +47,7 @@ public class ItemsConfig {
         ConfigurationSection itemsSection = itemsConfig.getConfigurationSection("items");
         if (itemsSection == null) return;
 
-        for (int page = 1; page <= 3; page++) {
+        for (int page = 1; page <= getTotalPages(); page++) {
             List<CustomItem> items = new ArrayList<>();
             ConfigurationSection pageSection = itemsSection.getConfigurationSection("page" + page);
 
@@ -187,22 +188,23 @@ public class ItemsConfig {
         itemsConfig.set(path + ".slot", slot);
 
         if (item.hasItemMeta()) {
-            if (item.getItemMeta().hasDisplayName()) {
-                itemsConfig.set(path + ".name", item.getItemMeta().getDisplayName().replace("§", "&"));
+            ItemMeta meta = item.getItemMeta();
+            if (meta.hasDisplayName()) {
+                itemsConfig.set(path + ".name", meta.getDisplayName().replace("§", "&"));
             }
 
-            if (item.getItemMeta().hasLore()) {
-                List<String> lore = new ArrayList<>(item.getItemMeta().getLore());
+            if (meta.hasLore()) {
+                List<String> lore = new ArrayList<>(meta.getLore());
                 lore.replaceAll(s -> s.replace("§", "&"));
                 itemsConfig.set(path + ".lore", lore);
             }
+        }
 
-            if (!item.getEnchantments().isEmpty()) {
-                for (Map.Entry<Enchantment, Integer> entry : item.getEnchantments().entrySet()) {
-                    // Use the key name for modern enchantment naming
-                    String enchantName = entry.getKey().getKey().getKey();
-                    itemsConfig.set(path + ".enchantments." + enchantName.toUpperCase(), entry.getValue());
-                }
+        if (!item.getEnchantments().isEmpty()) {
+            for (Map.Entry<Enchantment, Integer> entry : item.getEnchantments().entrySet()) {
+                // Use the key name for modern enchantment naming
+                String enchantName = entry.getKey().getKey().getKey();
+                itemsConfig.set(path + ".enchantments." + enchantName.toUpperCase(), entry.getValue());
             }
         }
 

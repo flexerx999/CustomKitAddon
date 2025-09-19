@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 
 public class InventoryClickListener implements Listener {
 
@@ -58,10 +59,12 @@ public class InventoryClickListener implements Listener {
 
             // Force close inventory and start rename process
             event.setCancelled(true);
-            player.closeInventory();
 
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                startRenameProcess(player);
+                player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
+                Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                    startRenameProcess(player);
+                }, 1L);
             }, 1L);
             return;
         }
@@ -82,6 +85,7 @@ public class InventoryClickListener implements Listener {
                     plugin.getLogger().info("Ignoring armor slot " + slot + " (handled by StrikePractice)");
                 }
                 // DO NOT cancel the event - let StrikePractice handle it
+                plugin.getLogger().info("pls ignore armor plspl splsplspls plps");
                 return;
             }
 
@@ -102,13 +106,13 @@ public class InventoryClickListener implements Listener {
                     plugin.getLogger().info("Rename slot clicked - force closing GUI");
                 }
 
-                // Force close inventory immediately
-                player.closeInventory();
-
                 // Start rename process after ensuring closure
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                    startRenameProcess(player);
-                }, 5L); // Increased delay to ensure GUI is fully closed
+                    player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                        startRenameProcess(player);
+                    }, 1L);
+                }, 1L);
                 return;
             }
 
@@ -117,23 +121,19 @@ public class InventoryClickListener implements Listener {
                 event.setCancelled(true);
 
                 // Map the GUI slot to inventory slot (18→0, 19→1, etc.)
-                int inventorySlot = slot - 18;
-
-                // Store the INVENTORY slot for later use (0-35)
-                plugin.getGuiManager().setSelectedSlot(player, inventorySlot);
+                final int inventorySlot = slot - 18;
 
                 if (plugin.getConfigManager().isDebugEnabled()) {
                     plugin.getLogger().info("Item slot clicked at GUI position " + slot +
                             " (maps to inventory slot " + inventorySlot + ")");
                 }
 
-                // Force close inventory immediately
-                player.closeInventory();
-
-                // Open items selection GUI with the mapped inventory slot
                 Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                    plugin.getGuiManager().openCustomItemsGUI(player, 1, inventorySlot);
-                }, 5L);
+                    player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                        plugin.getGuiManager().openCustomItemsGUI(player, 1, inventorySlot);
+                    }, 1L);
+                }, 1L);
 
             }
         }

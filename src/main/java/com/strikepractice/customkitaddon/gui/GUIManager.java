@@ -3,6 +3,7 @@ package com.strikepractice.customkitaddon.gui;
 import com.strikepractice.customkitaddon.CustomKitAddon;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,14 +20,11 @@ public class GUIManager {
     }
 
     public void openCustomItemsGUI(Player player, int page, int selectedSlot) {
-        // Close any existing GUI first
-        openGuis.remove(player.getUniqueId());
-
         // Store the selected slot for later use
         selectedSlots.put(player.getUniqueId(), selectedSlot);
 
         // Create and open the GUI - ensure page is properly set
-        final int finalPage = Math.max(1, Math.min(page, 3)); // Ensure page is between 1-3
+        final int finalPage = page; // Ensure page is between 1-3
         final int finalSelectedSlot = selectedSlot;
 
         // Clear any pending tasks for this player to prevent multiple GUIs opening
@@ -52,7 +50,7 @@ public class GUIManager {
         }, 3L).getTaskId();
 
         // Store the task ID in metadata
-        player.setMetadata("customkit_pending_task", new org.bukkit.metadata.FixedMetadataValue(plugin, taskId));
+        player.setMetadata("customkit_pending_task", new FixedMetadataValue(plugin, taskId));
     }
 
     public void closeGUI(Player player) {

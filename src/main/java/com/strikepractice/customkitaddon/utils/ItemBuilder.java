@@ -10,6 +10,7 @@ import org.bukkit.inventory.EquipmentSlotGroup;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -106,38 +107,11 @@ public class ItemBuilder {
 
     public ItemBuilder addAttributeModifier(String attributeName, double amount, String operation, String slot) {
         if (meta != null) {
+            Attribute attribute = Attribute.valueOf(attributeName.toUpperCase());
+            AttributeModifier.Operation op = AttributeModifier.Operation.valueOf(operation.toUpperCase());
             try {
-                Attribute attribute = Attribute.valueOf(attributeName.toUpperCase());
-                AttributeModifier.Operation op = AttributeModifier.Operation.valueOf(operation.toUpperCase());
-
                 // In 1.21+, we need to use EquipmentSlotGroup instead of EquipmentSlot
-                org.bukkit.inventory.EquipmentSlotGroup slotGroup = null;
-                if (slot != null) {
-                    switch (slot.toUpperCase()) {
-                        case "HAND":
-                            slotGroup = org.bukkit.inventory.EquipmentSlotGroup.MAINHAND;
-                            break;
-                        case "OFF_HAND":
-                            slotGroup = org.bukkit.inventory.EquipmentSlotGroup.OFFHAND;
-                            break;
-                        case "HEAD":
-                            slotGroup = org.bukkit.inventory.EquipmentSlotGroup.HEAD;
-                            break;
-                        case "CHEST":
-                            slotGroup = org.bukkit.inventory.EquipmentSlotGroup.CHEST;
-                            break;
-                        case "LEGS":
-                            slotGroup = org.bukkit.inventory.EquipmentSlotGroup.LEGS;
-                            break;
-                        case "FEET":
-                            slotGroup = org.bukkit.inventory.EquipmentSlotGroup.FEET;
-                            break;
-                        default:
-                            slotGroup = org.bukkit.inventory.EquipmentSlotGroup.ANY;
-                    }
-                } else {
-                    slotGroup = org.bukkit.inventory.EquipmentSlotGroup.ANY;
-                }
+                EquipmentSlotGroup slotGroup = getEquipmentSlotGroup(slot);
 
                 // Use the new constructor for 1.21+
                 AttributeModifier modifier = new AttributeModifier(
@@ -151,9 +125,53 @@ public class ItemBuilder {
             } catch (Exception e) {
                 // Invalid attribute, operation, or slot - skip
                 // Silent fail to avoid dependencies on plugin logger
+
+                AttributeModifier modifier = new AttributeModifier(
+                        UUID.randomUUID(),
+                        attributeName,
+                        amount, op, getEquipmentSlot(slot)
+                );
+
+                meta.addAttributeModifier(attribute, modifier);
             }
         }
         return this;
+    }
+
+    private static @NotNull EquipmentSlotGroup getEquipmentSlotGroup(String slot) {
+        EquipmentSlotGroup slotGroup;
+        if (slot != null) {
+            switch (slot.toUpperCase()) {
+                case "HAND": return EquipmentSlotGroup.MAINHAND;
+                case "OFF_HAND": return EquipmentSlotGroup.OFFHAND;
+                case "HEAD": return EquipmentSlotGroup.HEAD;
+                case "CHEST": return EquipmentSlotGroup.CHEST;
+                case "LEGS": return EquipmentSlotGroup.LEGS;
+                case "FEET": return EquipmentSlotGroup.FEET;
+                default: return EquipmentSlotGroup.ANY;
+            }
+        } else {
+            slotGroup = EquipmentSlotGroup.ANY;
+        }
+        return slotGroup;
+    }
+
+    private static @NotNull EquipmentSlot getEquipmentSlot(String s) {
+        EquipmentSlot slot;
+        if (s != null) {
+            switch (s.toUpperCase()) {
+                case "HAND": return EquipmentSlot.HAND;
+                case "OFF_HAND": return EquipmentSlot.OFF_HAND;
+                case "HEAD": return EquipmentSlot.HEAD;
+                case "CHEST": return EquipmentSlot.CHEST;
+                case "LEGS": return EquipmentSlot.LEGS;
+                case "FEET": return EquipmentSlot.FEET;
+                default: return EquipmentSlot.BODY;
+            }
+        } else {
+            slot = EquipmentSlot.BODY;
+        }
+        return slot;
     }
 
     public ItemBuilder hideAllFlags() {
