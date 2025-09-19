@@ -229,6 +229,7 @@ public class ItemsConfig {
     }
 
     public int getTotalPages() {
-        return 7; // Updated from 3 to 7 pages
+        // Get from ConfigManager instead of hardcoding
+        return plugin.getConfigManager().getTotalPages();
     }
 }
