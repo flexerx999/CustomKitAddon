@@ -27,7 +27,7 @@ public class CustomItemsGUI {
     public CustomItemsGUI(CustomKitAddon plugin, Player player, int page, int targetSlot) {
         this.plugin = plugin;
         this.player = player;
-        this.page = Math.max(1, Math.min(page, 3));
+        this.page = Math.max(1, Math.min(page, 7)); // Updated from 3 to 7
         this.targetSlot = targetSlot;
     }
 
@@ -83,7 +83,7 @@ public class CustomItemsGUI {
 
         // Page indicator (slot 49)
         ItemStack pageIndicator = new ItemBuilder(Material.BOOK)
-                .setName("§ePage " + page + " of 3")
+                .setName("§ePage " + page + " of 7") // Updated from "of 3" to "of 7"
                 .setLore("§7Browse custom kit items")
                 .build();
         inventory.setItem(49, pageIndicator);
@@ -120,7 +120,7 @@ public class CustomItemsGUI {
             return;
         }
 
-        if (slot == 50 && page < 3) {
+        if (slot == 50 && page < 7) { // Updated from page < 3 to page < 7
             // Next page
             if (plugin.getConfigManager().isDebugEnabled()) {
                 plugin.getLogger().info("Navigating to next page: " + (page + 1));

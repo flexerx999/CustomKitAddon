@@ -23,8 +23,8 @@ public class GUIManager {
         // Store the selected slot for later use
         selectedSlots.put(player.getUniqueId(), selectedSlot);
 
-        // Create and open the GUI - ensure page is properly set
-        final int finalPage = page; // Ensure page is between 1-3
+        // Create and open the GUI - ensure page is between 1-7
+        final int finalPage = Math.max(1, Math.min(page, 7)); // Updated to validate against 7 pages
         final int finalSelectedSlot = selectedSlot;
 
         // Clear any pending tasks for this player to prevent multiple GUIs opening

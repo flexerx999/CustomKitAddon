@@ -75,9 +75,9 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
         if (args.length > 1) {
             try {
                 page = Integer.parseInt(args[1]);
-                page = Math.max(1, Math.min(page, 3)); // Clamp to 1-3
+                page = Math.max(1, Math.min(page, 7)); // Updated from 3 to 7
             } catch (NumberFormatException e) {
-                player.sendMessage("§cInvalid page number! Use 1-3.");
+                player.sendMessage("§cInvalid page number! Use 1-7."); // Updated message
                 return;
             }
         }
@@ -135,7 +135,7 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args.length == 2 && args[0].equalsIgnoreCase("add")) {
-            return Arrays.asList("1", "2", "3");
+            return Arrays.asList("1", "2", "3", "4", "5", "6", "7"); // Updated to include pages 4-7
         }
 
         if (args.length == 3 && args[0].equalsIgnoreCase("add")) {

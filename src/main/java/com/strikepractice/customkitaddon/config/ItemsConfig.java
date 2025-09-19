@@ -229,6 +229,6 @@ public class ItemsConfig {
     }
 
     public int getTotalPages() {
-        return 3; // Fixed to 3 pages as requested
+        return 7; // Updated from 3 to 7 pages
     }
 }

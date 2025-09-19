@@ -6,12 +6,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.strikepractice</groupId>
-    <artifactId>customkitaddon</artifactId>
+    <artifactId>StrikePracticeCustomKit</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>CustomKitAddon</name>
-    <description>Advanced Custom Kit addon for StrikePractice</description>
+    <description>Silly Custom Kit addon for StrikePractice</description>
 
     <properties>
         <java.version>21</java.version>

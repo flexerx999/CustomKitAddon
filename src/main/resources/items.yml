@@ -266,17 +266,23 @@ items:
       amount: 16
       name: "&cTNT"
 
-# Example of item with custom attributes (1.21+ format)
-# custom_item:
-#   material: DIAMOND_SWORD
-#   name: "&c&lCustom Sword"
-#   custom-model-data: 1001
-#   attributes:
-#     GENERIC_ATTACK_DAMAGE:
-#       amount: 10.0
-#       operation: "ADD_NUMBER"
-#       slot: "HAND"
-#     GENERIC_ATTACK_SPEED:
-#       amount: 0.2
-#       operation: "ADD_SCALAR"
-#       slot: "HAND"
+  # Page 4 - Empty (to be configured)
+  page4:
+  # Add items here as needed
+  # Example:
+  # item1:
+  #   material: DIAMOND_SWORD
+  #   slot: 0
+  #   name: "&bExample Sword"
+
+  # Page 5 - Empty (to be configured)
+  page5:
+  # Add items here as needed
+
+  # Page 6 - Empty (to be configured)
+  page6:
+  # Add items here as needed
+
+  # Page 7 - Empty (to be configured)
+  page7:
+  # Add items here as needed
