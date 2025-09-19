@@ -5,10 +5,11 @@
 gui:
   title: "&8Custom Kit Items - Page %page%"
   items-per-page: 45  # Max items per page (excluding bottom navigation row)
+  pages: 7  # Number of pages (1-99)
 
 # Settings
 settings:
-  debug: true  # Enable for troubleshooting
+  debug: false  # Enable for troubleshooting
   rename-timeout: 30  # Seconds before rename times out
   sounds:
     enabled: true
