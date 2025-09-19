@@ -24,7 +24,7 @@ public class GUIManager {
         selectedSlots.put(player.getUniqueId(), selectedSlot);
 
         // Create and open the GUI - ensure page is between 1-7
-        final int finalPage = Math.max(1, Math.min(page, 7)); // Updated to validate against 7 pages
+        final int finalPage = Math.max(1, Math.min(page, plugin.getConfigManager().getTotalPages()));
         final int finalSelectedSlot = selectedSlot;
 
         // Clear any pending tasks for this player to prevent multiple GUIs opening
