@@ -57,6 +57,14 @@ public class ConfigManager {
         return config.getInt("gui.items-per-page", 45);
     }
 
+    public int getTotalPages() {
+        int pages = config.getInt("gui.pages", 7); // Default to 7 if not set
+        // Validate range (1-99)
+        if (pages < 1) pages = 7;
+        if (pages > 99) pages = 7;
+        return pages;
+    }
+
     public boolean isSoundEnabled() {
         return config.getBoolean("settings.sounds.enabled", true);
     }
