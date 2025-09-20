@@ -8,6 +8,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
@@ -69,6 +70,29 @@ public class ItemsConfig {
 
     private CustomItem loadCustomItem(ConfigurationSection section) {
         try {
+            int slot = section.getInt("slot", -1);
+
+            // Check for full serialized ItemStack data first
+            if (section.contains("data_type") && section.getString("data_type").equals("default")) {
+                if (section.contains("data")) {
+                    // Load serialized ItemStack
+                    ConfigurationSection dataSection = section.getConfigurationSection("data");
+                    if (dataSection != null) {
+                        // Use Bukkit's built-in deserialization
+                        Map<String, Object> data = dataSection.getValues(false);
+                        ItemStack item = ItemStack.deserialize(data);
+
+                        if (item != null && item.getType() != Material.AIR) {
+                            if (plugin.getConfigManager().isDebugEnabled()) {
+                                plugin.getLogger().info("Loaded serialized item: " + item.getType());
+                            }
+                            return new CustomItem(item, slot);
+                        }
+                    }
+                }
+            }
+
+            // Fallback to simple format loading
             String materialName = section.getString("material", "AIR");
             Material material = Material.valueOf(materialName.toUpperCase());
 
@@ -89,6 +113,19 @@ public class ItemsConfig {
                 List<String> lore = section.getStringList("lore");
                 lore.replaceAll(s -> s.replace("&", "§"));
                 builder.setLore(lore);
+            }
+
+            // ItemFlags support
+            if (section.contains("item-flags")) {
+                List<String> flags = section.getStringList("item-flags");
+                for (String flagName : flags) {
+                    try {
+                        ItemFlag flag = ItemFlag.valueOf(flagName.toUpperCase());
+                        builder.addItemFlag(flag);
+                    } catch (IllegalArgumentException e) {
+                        plugin.getLogger().warning("Invalid item flag: " + flagName);
+                    }
+                }
             }
 
             // Enchantments
@@ -143,6 +180,26 @@ public class ItemsConfig {
 
             ItemStack item = builder.build();
 
+            // PublicBukkitValues / PersistentDataContainer support (1.14+)
+            if (section.contains("custom-data")) {
+                ItemMeta meta = item.getItemMeta();
+                if (meta != null) {
+                    try {
+                        // Use reflection to support multiple versions
+                        ConfigurationSection customData = section.getConfigurationSection("custom-data");
+                        if (customData != null) {
+                            applyCustomData(meta, customData);
+                        }
+                        item.setItemMeta(meta);
+                    } catch (Exception e) {
+                        // PDC not available in this version, ignore
+                        if (plugin.getConfigManager().isDebugEnabled()) {
+                            plugin.getLogger().info("PersistentDataContainer not available: " + e.getMessage());
+                        }
+                    }
+                }
+            }
+
             // Potion effects (for potions)
             if (material.name().contains("POTION")) {
                 ConfigurationSection effects = section.getConfigurationSection("potion-effects");
@@ -165,12 +222,69 @@ public class ItemsConfig {
                 }
             }
 
-            int slot = section.getInt("slot", -1);
             return new CustomItem(item, slot);
 
         } catch (Exception e) {
             plugin.getLogger().severe("Error loading item from config: " + e.getMessage());
+            e.printStackTrace();
             return null;
+        }
+    }
+
+    private void applyCustomData(ItemMeta meta, ConfigurationSection customData) {
+        try {
+            // Get PersistentDataContainer via reflection for version compatibility
+            java.lang.reflect.Method getPDC = meta.getClass().getMethod("getPersistentDataContainer");
+            Object pdc = getPDC.invoke(meta);
+
+            // Get the NamespacedKey class
+            Class<?> namespacedKeyClass = Class.forName("org.bukkit.NamespacedKey");
+
+            // Get PersistentDataType class and common types
+            Class<?> pdtClass = Class.forName("org.bukkit.persistence.PersistentDataType");
+            Object STRING_TYPE = pdtClass.getField("STRING").get(null);
+            Object INTEGER_TYPE = pdtClass.getField("INTEGER").get(null);
+            Object DOUBLE_TYPE = pdtClass.getField("DOUBLE").get(null);
+            Object BOOLEAN_TYPE = pdtClass.getField("BOOLEAN").get(null);
+
+            // Get the set method
+            java.lang.reflect.Method setMethod = pdc.getClass().getMethod("set",
+                    namespacedKeyClass, pdtClass, Object.class);
+
+            // Process each custom data entry
+            for (String key : customData.getKeys(false)) {
+                try {
+                    // Parse the key for namespace
+                    String namespace = "customkit";
+                    String actualKey = key;
+
+                    if (key.contains(":")) {
+                        String[] parts = key.split(":", 2);
+                        namespace = parts[0];
+                        actualKey = parts[1];
+                    }
+
+                    // Create NamespacedKey
+                    Object nsKey = namespacedKeyClass.getConstructor(String.class, String.class)
+                            .newInstance(namespace, actualKey);
+
+                    // Set value based on type
+                    Object value = customData.get(key);
+                    if (value instanceof String) {
+                        setMethod.invoke(pdc, nsKey, STRING_TYPE, value);
+                    } else if (value instanceof Integer) {
+                        setMethod.invoke(pdc, nsKey, INTEGER_TYPE, value);
+                    } else if (value instanceof Double) {
+                        setMethod.invoke(pdc, nsKey, DOUBLE_TYPE, value);
+                    } else if (value instanceof Boolean) {
+                        setMethod.invoke(pdc, nsKey, BOOLEAN_TYPE, value);
+                    }
+                } catch (Exception e) {
+                    plugin.getLogger().warning("Failed to set custom data for key: " + key);
+                }
+            }
+        } catch (Exception e) {
+            // PDC not available, ignore
         }
     }
 
@@ -183,9 +297,34 @@ public class ItemsConfig {
     private void saveItem(int page, int index, ItemStack item, int slot) {
         String path = "items.page" + page + ".item" + index;
 
+        // Always save slot
+        itemsConfig.set(path + ".slot", slot);
+
+        // Try to save as serialized data (preserves ALL item data including PDC)
+        try {
+            // Serialize the entire ItemStack
+            Map<String, Object> serialized = item.serialize();
+
+            // Save as full serialized format
+            itemsConfig.set(path + ".data_type", "default");
+            itemsConfig.set(path + ".data", serialized);
+
+            if (plugin.getConfigManager().isDebugEnabled()) {
+                plugin.getLogger().info("Saved item as serialized data: " + item.getType());
+            }
+
+        } catch (Exception e) {
+            // Fallback to simple format if serialization fails
+            plugin.getLogger().warning("Failed to serialize item, using simple format: " + e.getMessage());
+            saveSimpleFormat(path, item);
+        }
+
+        save();
+    }
+
+    private void saveSimpleFormat(String path, ItemStack item) {
         itemsConfig.set(path + ".material", item.getType().name());
         itemsConfig.set(path + ".amount", item.getAmount());
-        itemsConfig.set(path + ".slot", slot);
 
         if (item.hasItemMeta()) {
             ItemMeta meta = item.getItemMeta();
@@ -198,17 +337,32 @@ public class ItemsConfig {
                 lore.replaceAll(s -> s.replace("§", "&"));
                 itemsConfig.set(path + ".lore", lore);
             }
+
+            // Save ItemFlags
+            if (!meta.getItemFlags().isEmpty()) {
+                List<String> flags = new ArrayList<>();
+                for (ItemFlag flag : meta.getItemFlags()) {
+                    flags.add(flag.name());
+                }
+                itemsConfig.set(path + ".item-flags", flags);
+            }
+
+            // Save custom model data if present
+            try {
+                if (meta.hasCustomModelData()) {
+                    itemsConfig.set(path + ".custom-model-data", meta.getCustomModelData());
+                }
+            } catch (NoSuchMethodError e) {
+                // Method not available in this version
+            }
         }
 
         if (!item.getEnchantments().isEmpty()) {
             for (Map.Entry<Enchantment, Integer> entry : item.getEnchantments().entrySet()) {
-                // Use the key name for modern enchantment naming
                 String enchantName = entry.getKey().getKey().getKey();
                 itemsConfig.set(path + ".enchantments." + enchantName.toUpperCase(), entry.getValue());
             }
         }
-
-        save();
     }
 
     public void save() {
