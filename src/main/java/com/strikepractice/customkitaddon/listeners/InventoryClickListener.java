@@ -5,6 +5,7 @@ import com.strikepractice.customkitaddon.gui.CustomItemsGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import com.strikepractice.customkitaddon.gui.EnchantmentGUI;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -41,6 +42,13 @@ public class InventoryClickListener implements Listener {
         if (plugin.getConfigManager().isDebugEnabled()) {
             plugin.getLogger().info("Inventory clicked with title: " + componentTitle);
             plugin.getLogger().info("Clicked slot: " + slot);
+        }
+
+        EnchantmentGUI enchantGui = plugin.getGuiManager().getEnchantmentGUI(player);
+        if (enchantGui != null) {
+            event.setCancelled(true);
+            enchantGui.handleClick(slot);
+            return;
         }
 
         // Handle our custom items GUI clicks FIRST (highest priority)

@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class CustomItemsGUI {
     private final int page;
     private final int targetSlot;
     private Inventory inventory;
+    private final List<CustomItem> pageItems;
 
     public CustomItemsGUI(CustomKitAddon plugin, Player player, int page, int targetSlot) {
         this.plugin = plugin;
@@ -30,6 +32,7 @@ public class CustomItemsGUI {
         // Use config value for max pages
         this.page = Math.max(1, Math.min(page, plugin.getConfigManager().getTotalPages()));
         this.targetSlot = targetSlot;
+        this.pageItems = plugin.getItemsConfig().getPageItems(page);
     }
 
     public void open() {
@@ -46,16 +49,48 @@ public class CustomItemsGUI {
     }
 
     private void fillItems() {
-        List<CustomItem> items = plugin.getItemsConfig().getPageItems(page);
-
-        for (CustomItem customItem : items) {
+        for (CustomItem customItem : pageItems) {
             if (customItem.hasSpecificSlot() && customItem.getSlot() < 45) {
-                inventory.setItem(customItem.getSlot(), customItem.getItemStack());
+                ItemStack displayItem = customItem.getItemStack();
+
+                // Add indicator if this has enchant GUI
+                if (customItem.hasEnchantGui()) {
+                    ItemStack glowItem = displayItem.clone();
+                    ItemMeta meta = glowItem.getItemMeta();
+                    if (meta != null) {
+                        List<String> lore = meta.hasLore() ? meta.getLore() : new java.util.ArrayList<String>();
+                        lore.add("");
+                        lore.add("§d§l✦ ENCHANTABLE ITEM");
+                        lore.add("§7Click to select enchantments");
+                        meta.setLore(lore);
+                        glowItem.setItemMeta(meta);
+                    }
+                    inventory.setItem(customItem.getSlot(), glowItem);
+                } else {
+                    inventory.setItem(customItem.getSlot(), displayItem);
+                }
             } else {
                 // Find first empty slot
                 for (int i = 0; i < 45; i++) {
                     if (inventory.getItem(i) == null) {
-                        inventory.setItem(i, customItem.getItemStack());
+                        ItemStack displayItem = customItem.getItemStack();
+
+                        // Add indicator if this has enchant GUI
+                        if (customItem.hasEnchantGui()) {
+                            ItemStack glowItem = displayItem.clone();
+                            ItemMeta meta = glowItem.getItemMeta();
+                            if (meta != null) {
+                                List<String> lore = meta.hasLore() ? meta.getLore() : new java.util.ArrayList<String>();
+                                lore.add("");
+                                lore.add("§d§l✦ ENCHANTABLE ITEM");
+                                lore.add("§7Click to select enchantments");
+                                meta.setLore(lore);
+                                glowItem.setItemMeta(meta);
+                            }
+                            inventory.setItem(i, glowItem);
+                        } else {
+                            inventory.setItem(i, displayItem);
+                        }
                         break;
                     }
                 }
@@ -146,12 +181,52 @@ public class CustomItemsGUI {
             if (clickedItem != null && clickedItem.getType() != Material.AIR &&
                     clickedItem.getType() != Material.GRAY_STAINED_GLASS_PANE) {
 
-                if (plugin.getConfigManager().isDebugEnabled()) {
-                    plugin.getLogger().info("Selected item: " + clickedItem.getType() +
-                            " for slot " + targetSlot);
+                // Find the corresponding CustomItem
+                CustomItem customItem = null;
+                for (CustomItem item : pageItems) {
+                    if (item.hasSpecificSlot() && item.getSlot() == slot) {
+                        customItem = item;
+                        break;
+                    }
                 }
 
-                selectItem(clickedItem);
+                // If not found by specific slot, might be a non-specific slot item
+                if (customItem == null) {
+                    int nonSpecificIndex = 0;
+                    for (CustomItem item : pageItems) {
+                        if (!item.hasSpecificSlot()) {
+                            if (nonSpecificIndex == slot) {
+                                customItem = item;
+                                break;
+                            }
+                            nonSpecificIndex++;
+                        }
+                    }
+                }
+
+                if (customItem != null && customItem.hasEnchantGui()) {
+                    // Open enchantment GUI instead of direct selection
+                    if (plugin.getConfigManager().isDebugEnabled()) {
+                        plugin.getLogger().info("Opening enchantment GUI for: " + clickedItem.getType());
+                    }
+
+                    // Close current GUI and open enchantment GUI
+                    player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
+                    CustomItem finalCustomItem = customItem;
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                        plugin.getGuiManager().openEnchantmentGUI(player, finalCustomItem.getItemStack(), targetSlot);
+                    }, 1L);
+
+                    playSound();
+                } else {
+                    // Normal item selection
+                    if (plugin.getConfigManager().isDebugEnabled()) {
+                        plugin.getLogger().info("Selected item: " + clickedItem.getType() +
+                                " for slot " + targetSlot);
+                    }
+
+                    selectItem(clickedItem);
+                }
             }
         }
     }

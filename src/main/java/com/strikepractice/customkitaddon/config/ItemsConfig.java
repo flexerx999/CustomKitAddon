@@ -71,6 +71,7 @@ public class ItemsConfig {
     private CustomItem loadCustomItem(ConfigurationSection section) {
         try {
             int slot = section.getInt("slot", -1);
+            boolean hasEnchantGui = section.getBoolean("enchantgui", false);
 
             // Check for full serialized ItemStack data first
             if (section.contains("data_type") && section.getString("data_type").equals("default")) {
@@ -86,7 +87,9 @@ public class ItemsConfig {
                             if (plugin.getConfigManager().isDebugEnabled()) {
                                 plugin.getLogger().info("Loaded serialized item: " + item.getType());
                             }
-                            return new CustomItem(item, slot);
+                            CustomItem customItem = new CustomItem(item, slot);
+                            customItem.setEnchantGui(hasEnchantGui);
+                            return customItem;
                         }
                     }
                 }
@@ -222,7 +225,9 @@ public class ItemsConfig {
                 }
             }
 
-            return new CustomItem(item, slot);
+            CustomItem customItem = new CustomItem(item, slot);
+            customItem.setEnchantGui(hasEnchantGui);
+            return customItem;
 
         } catch (Exception e) {
             plugin.getLogger().severe("Error loading item from config: " + e.getMessage());
@@ -289,14 +294,61 @@ public class ItemsConfig {
     }
 
     public void addItem(int page, ItemStack item, int slot) {
+        // First, remove any existing item at this slot
+        removeItemAtSlot(page, slot);
+
+        // Now add the new item
         List<CustomItem> items = pageItems.computeIfAbsent(page, k -> new ArrayList<>());
         items.add(new CustomItem(item, slot));
-        saveItem(page, items.size() - 1, item, slot);
+
+        // Save to config (this will also handle the replacement in the file)
+        savePageToConfig(page);
     }
 
-    private void saveItem(int page, int index, ItemStack item, int slot) {
-        String path = "items.page" + page + ".item" + index;
+    private void removeItemAtSlot(int page, int slot) {
+        List<CustomItem> items = pageItems.get(page);
+        if (items != null) {
+            items.removeIf(item -> item.getSlot() == slot);
+        }
 
+        // Also remove from config file
+        ConfigurationSection pageSection = itemsConfig.getConfigurationSection("items.page" + page);
+        if (pageSection != null) {
+            // Find and remove any item with matching slot
+            for (String key : new ArrayList<>(pageSection.getKeys(false))) {
+                ConfigurationSection itemSection = pageSection.getConfigurationSection(key);
+                if (itemSection != null && itemSection.getInt("slot", -1) == slot) {
+                    pageSection.set(key, null);
+                }
+            }
+        }
+    }
+
+    private void savePageToConfig(int page) {
+        // Clear the page section
+        itemsConfig.set("items.page" + page, null);
+
+        // Save all items for this page
+        List<CustomItem> items = pageItems.get(page);
+        if (items != null) {
+            int index = 0;
+            for (CustomItem customItem : items) {
+                String path = "items.page" + page + ".item" + index;
+                saveItemToConfig(path, customItem.getItemStack(), customItem.getSlot());
+
+                // Save enchantgui flag if present
+                if (customItem.hasEnchantGui()) {
+                    itemsConfig.set(path + ".enchantgui", true);
+                }
+
+                index++;
+            }
+        }
+
+        save();
+    }
+
+    private void saveItemToConfig(String path, ItemStack item, int slot) {
         // Always save slot
         itemsConfig.set(path + ".slot", slot);
 
@@ -318,8 +370,6 @@ public class ItemsConfig {
             plugin.getLogger().warning("Failed to serialize item, using simple format: " + e.getMessage());
             saveSimpleFormat(path, item);
         }
-
-        save();
     }
 
     private void saveSimpleFormat(String path, ItemStack item) {
