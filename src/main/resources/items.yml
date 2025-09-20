@@ -1,13 +1,70 @@
 # CustomKitAddon Items Configuration
-# Define custom items for each page (3 pages total)
-# Each item can have special properties, enchantments, and attributes
+# Supports two formats:
+# 1. Simple format - manually define items field by field
+# 2. Serialized format - full ItemStack data (preserves ALL metadata)
 
 items:
-  # Page 1 - Weapons & Tools
+  # Page 1 - Mixed format examples
   page1:
+    # Simple format example
+    swords:
+      slot: 0
+      material: DIAMOND_SWORD
+      name: "&b&lDiamond Sword"
+      lore:
+        - "&7A powerful sword"
+        - "&7for combat"
+      enchantments:
+        DAMAGE_ALL: 5
+        DURABILITY: 3
+      item-flags:
+        - HIDE_ENCHANTS
+        - HIDE_ATTRIBUTES
+      custom-model-data: 1001
+      custom-data:
+        customkit:tier: 5
+        customkit:special: true
+        damage:bonus: 15.5
+    # Serialized format example (preserves ALL item data including PDC)
+    # This format is automatically used when using /customkitadmin add
+    fabled_book:
+      slot: 1
+      data_type: default
+      data:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3700
+        type: WRITTEN_BOOK
+        meta:
+          ==: ItemMeta
+          meta-type: BOOK_SIGNED
+          display-name: '{"text":"","extra":[{"text":"Fabled Enchantment Book ","color":"#774FFF"},{"text":"[Right Click]","color":"gray"}]}'
+          lore:
+            - '{"text":"Right Click while holding to receive a random","color":"gray"}'
+            - '{"text":"Fabled enchantment book.","color":"#774FFF"}'
+          custom-model-data: 0
+          ItemFlags:
+            - HIDE_ENCHANTS
+            - HIDE_ATTRIBUTES
+          PublicBukkitValues:
+            advancedenchantments:rcbook_new: "FABLED"
+    # Another simple format with custom data
+    special_helmet:
+      slot: 2
+      material: NETHERITE_HELMET
+      name: "&4&lSpecial Helmet"
+      enchantments:
+        PROTECTION_ENVIRONMENTAL: 4
+        DURABILITY: 3
+      item-flags:
+        - HIDE_UNBREAKABLE
+        - HIDE_DESTROYS
+      custom-data:
+        customkit:level: 10
+        customkit:bound: true
+        owner: "PlayerName"
     sword1:
       material: DIAMOND_SWORD
-      slot: 0
+      slot: 3
       name: "&b&lDiamond Sword"
       lore:
         - "&7A powerful sword"
@@ -16,10 +73,9 @@ items:
         DAMAGE_ALL: 5
         DURABILITY: 3
         FIRE_ASPECT: 2
-
     sword2:
       material: NETHERITE_SWORD
-      slot: 1
+      slot: 4
       name: "&4&lNetherite Sword"
       lore:
         - "&7The ultimate weapon"
@@ -27,149 +83,45 @@ items:
         DAMAGE_ALL: 5
         DURABILITY: 3
         SWEEPING_EDGE: 3
-
     axe1:
       material: DIAMOND_AXE
-      slot: 2
+      slot: 5
       name: "&b&lDiamond Axe"
       enchantments:
         DAMAGE_ALL: 5
         DIG_SPEED: 5
-
     bow1:
       material: BOW
-      slot: 9
+      slot: 6
       name: "&6&lPower Bow"
       enchantments:
         ARROW_DAMAGE: 5
         ARROW_INFINITE: 1
         DURABILITY: 3
-
     crossbow1:
       material: CROSSBOW
-      slot: 10
+      slot: 7
       name: "&d&lQuick Crossbow"
       enchantments:
         QUICK_CHARGE: 3
         MULTISHOT: 1
-
-    fishing_rod:
-      material: FISHING_ROD
-      slot: 18
-      name: "&3&lFishing Rod"
-      enchantments:
-        DURABILITY: 3
-
-    trident:
-      material: TRIDENT
-      slot: 19
-      name: "&b&lLoyalty Trident"
-      enchantments:
-        LOYALTY: 3
-        IMPALING: 5
-        CHANNELING: 1
-
-  # Page 2 - Armor & Protection
+  # Items added via /customkitadmin add will appear here with full serialization
   page2:
-    helmet1:
-      material: DIAMOND_HELMET
-      slot: 0
-      name: "&b&lDiamond Helmet"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-        OXYGEN: 3
-
-    chestplate1:
-      material: DIAMOND_CHESTPLATE
-      slot: 1
-      name: "&b&lDiamond Chestplate"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-
-    leggings1:
-      material: DIAMOND_LEGGINGS
-      slot: 2
-      name: "&b&lDiamond Leggings"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-
-    boots1:
-      material: DIAMOND_BOOTS
-      slot: 3
-      name: "&b&lDiamond Boots"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-        PROTECTION_FALL: 4
-
-    helmet2:
-      material: NETHERITE_HELMET
-      slot: 9
-      name: "&4&lNetherite Helmet"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-
-    chestplate2:
-      material: NETHERITE_CHESTPLATE
-      slot: 10
-      name: "&4&lNetherite Chestplate"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-
-    leggings2:
-      material: NETHERITE_LEGGINGS
-      slot: 11
-      name: "&4&lNetherite Leggings"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-
-    boots2:
-      material: NETHERITE_BOOTS
-      slot: 12
-      name: "&4&lNetherite Boots"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-        PROTECTION_FALL: 4
-        DEPTH_STRIDER: 3
-
-    shield:
-      material: SHIELD
-      slot: 18
-      name: "&6&lProtection Shield"
-      durability: 0
-
-    totem:
-      material: TOTEM_OF_UNDYING
-      slot: 19
-      name: "&e&lTotem of Undying"
-
-  # Page 3 - Consumables & Utilities
-  page3:
     golden_apple:
       material: GOLDEN_APPLE
       slot: 0
       amount: 64
       name: "&6Golden Apple"
-
     enchanted_golden_apple:
       material: ENCHANTED_GOLDEN_APPLE
       slot: 1
       amount: 16
       name: "&d&lEnchanted Golden Apple"
-
     ender_pearl:
       material: ENDER_PEARL
       slot: 2
       amount: 16
       name: "&5Ender Pearl"
-
     speed_potion:
       material: POTION
       slot: 9
@@ -180,7 +132,6 @@ items:
         SPEED:
           duration: 90  # seconds
           amplifier: 1
-
     strength_potion:
       material: POTION
       slot: 10
@@ -191,7 +142,6 @@ items:
         INCREASE_DAMAGE:
           duration: 90
           amplifier: 1
-
     healing_potion:
       material: SPLASH_POTION
       slot: 11
@@ -202,7 +152,6 @@ items:
         HEAL:
           duration: 1
           amplifier: 1
-
     fire_resistance:
       material: POTION
       slot: 12
@@ -213,76 +162,28 @@ items:
         FIRE_RESISTANCE:
           duration: 480
           amplifier: 0
-
     arrows:
       material: ARROW
       slot: 18
       amount: 64
       name: "&7Arrows"
-
     firework:
       material: FIREWORK_ROCKET
       slot: 19
       amount: 64
       name: "&fFirework Rocket"
-
     food1:
       material: COOKED_BEEF
       slot: 27
       amount: 64
       name: "&7Steak"
-
     food2:
       material: GOLDEN_CARROT
       slot: 28
       amount: 64
       name: "&6Golden Carrot"
-
     blocks1:
       material: OBSIDIAN
       slot: 36
       amount: 64
       name: "&5Obsidian"
-
-    blocks2:
-      material: COBWEB
-      slot: 37
-      amount: 16
-      name: "&fCobweb"
-
-    water_bucket:
-      material: WATER_BUCKET
-      slot: 38
-      name: "&9Water Bucket"
-
-    lava_bucket:
-      material: LAVA_BUCKET
-      slot: 39
-      name: "&cLava Bucket"
-
-    tnt:
-      material: TNT
-      slot: 40
-      amount: 16
-      name: "&cTNT"
-
-  # Page 4 - Empty (to be configured)
-  page4:
-  # Add items here as needed
-  # Example:
-  # item1:
-  #   material: DIAMOND_SWORD
-  #   slot: 0
-  #   name: "&bExample Sword"
-
-  # Page 5 - Empty (to be configured)
-  page5:
-  # Add items here as needed
-
-  # Page 6 - Empty (to be configured)
-  page6:
-  # Add items here as needed
-
-  # Page 7 - Empty (to be configured)
-  page7:
-  # Add items here as needed
