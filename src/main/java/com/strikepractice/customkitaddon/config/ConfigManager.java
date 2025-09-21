@@ -84,4 +84,13 @@ public class ConfigManager {
     public FileConfiguration getConfig() {
         return config;
     }
+
+    // ELO Settings
+    public boolean isFixatedEloEnabled() {
+        return config.getBoolean("elo.fixated-elo", false);
+    }
+
+    public int getEloChangeAmount() {
+        return config.getInt("elo.elo-change", 91);
+    }
 }

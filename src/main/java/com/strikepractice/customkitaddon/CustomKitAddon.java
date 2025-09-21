@@ -6,6 +6,7 @@ import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;
 import com.strikepractice.customkitaddon.listeners.ChatListener;
+import com.strikepractice.customkitaddon.listeners.EloChangeListener;
 import com.strikepractice.customkitaddon.listeners.InventoryClickListener;
 import com.strikepractice.customkitaddon.listeners.StrikePracticeListener;
 import ga.strikepractice.StrikePractice;
@@ -89,6 +90,14 @@ public class CustomKitAddon extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(this), this);
         Bukkit.getPluginManager().registerEvents(chatListener, this);
         Bukkit.getPluginManager().registerEvents(new StrikePracticeListener(this), this);
+
+        // Register the new ELO listener
+        Bukkit.getPluginManager().registerEvents(new EloChangeListener(this), this);
+
+        // Log if fixated ELO is enabled
+        if (configManager.isFixatedEloEnabled()) {
+            getLogger().info("Fixated ELO is ENABLED - Changes set to: +" + configManager.getEloChangeAmount() + "/-" + configManager.getEloChangeAmount());
+        }
     }
 
     public void reload() {

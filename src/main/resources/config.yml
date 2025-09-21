@@ -5,15 +5,19 @@
 gui:
   title: "&8Custom Kit Items - Page %page%"
   items-per-page: 45  # Max items per page (excluding bottom navigation row)
-  pages: 7  # Number of pages (1-99)
 
 # Settings
 settings:
-  debug: false  # Enable for troubleshooting
+  debug: true  # Enable for troubleshooting
   rename-timeout: 30  # Seconds before rename times out
   sounds:
     enabled: true
     select: "ENTITY_EXPERIENCE_ORB_PICKUP"
+
+# ELO Settings
+elo:
+  fixated-elo: true  # Enable fixed ELO changes
+  elo-change: 91     # Amount of ELO to add/subtract (winner gets +, loser gets -)
 
 # Messages
 messages:
