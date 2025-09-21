@@ -1,7 +1,7 @@
 name: CustomKitAddon
 version: ${project.version}
 main: com.strikepractice.customkitaddon.CustomKitAddon
-author: destiall, Skaian AI?
+author: [Skaian, destiall]
 description: Advanced Custom Kit addon for StrikePractice
 api-version: '1.21'
 softdepend: [StrikePractice]
@@ -12,26 +12,30 @@ commands:
     permission: customkit.admin
     aliases: [cka]
     usage: /<command> <add|reload>
-  cktest:
-    description: Debug test command for CustomKit
+  ckdebug:
+    description: Debug command for StrikePractice API
     permission: customkit.admin
-    usage: /<command> <kit|gui|api>
+    usage: /<command>
 
 permissions:
   customkit.use:
     description: Allows using the custom kit GUI
-    default: true
+    default: op
   customkit.admin:
     description: All admin permissions
     default: op
     children:
       customkit.admin.add: true
       customkit.admin.reload: true
+      customkit.admin.debug: true
   customkit.admin.add:
     description: Add items to custom kit pages
     default: op
   customkit.admin.reload:
     description: Reload configuration files
+    default: op
+  customkit.admin.debug:
+    description: Use debug commands
     default: op
   customkit.rename:
     description: Rename kits via chat

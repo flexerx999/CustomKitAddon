@@ -2,6 +2,7 @@ package com.strikepractice.customkitaddon;
 
 import com.strikepractice.customkitaddon.commands.AdminCommand;
 import com.strikepractice.customkitaddon.commands.CustomKitCommand;
+import com.strikepractice.customkitaddon.commands.DebugCommand;
 import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;
@@ -77,8 +78,18 @@ public class CustomKitAddon extends JavaPlugin {
 
     private void registerCommands() {
         // Admin command
-        getCommand("customkitadmin").setExecutor(new AdminCommand(this));
+        if (getCommand("customkitadmin") != null) {
+            getCommand("customkitadmin").setExecutor(new AdminCommand(this));
+        } else {
+            getLogger().warning("Command 'customkitadmin' not found in plugin.yml");
+        }
 
+        // Debug command - only register if it exists in plugin.yml
+        if (getCommand("ckdebug") != null) {
+            getCommand("ckdebug").setExecutor(new DebugCommand(this));
+        } else {
+            getLogger().info("Debug command 'ckdebug' not registered (not in plugin.yml)");
+        }
 
         // Register customkit interceptor
         customKitCommand = new CustomKitCommand(this);
