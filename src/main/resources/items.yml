@@ -1,189 +1,2429 @@
 # CustomKitAddon Items Configuration
-# Supports two formats:
-# 1. Simple format - manually define items field by field
-# 2. Serialized format - full ItemStack data (preserves ALL metadata)
+# Define custom items for each page (3 pages total)
+# Each item can have special properties, enchantments, and attributes
 
 items:
-  # Page 1 - Mixed format examples
   page1:
-    # Simple format example
-    swords:
+    item0:
       slot: 0
-      material: DIAMOND_SWORD
-      name: "&b&lDiamond Sword"
-      lore:
-        - "&7A powerful sword"
-        - "&7for combat"
-      enchantments:
-        DAMAGE_ALL: 5
-        DURABILITY: 3
-      item-flags:
-        - HIDE_ENCHANTS
-        - HIDE_ATTRIBUTES
-      custom-model-data: 1001
-      custom-data:
-        customkit:tier: 5
-        customkit:special: true
-        damage:bonus: 15.5
-    # Serialized format example (preserves ALL item data including PDC)
-    # This format is automatically used when using /customkitadmin add
-    fabled_book:
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item1:
       slot: 1
       data_type: default
       data:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3700
-        type: WRITTEN_BOOK
-        meta:
-          ==: ItemMeta
-          meta-type: BOOK_SIGNED
-          display-name: '{"text":"","extra":[{"text":"Fabled Enchantment Book ","color":"#774FFF"},{"text":"[Right Click]","color":"gray"}]}'
-          lore:
-            - '{"text":"Right Click while holding to receive a random","color":"gray"}'
-            - '{"text":"Fabled enchantment book.","color":"#774FFF"}'
-          custom-model-data: 0
-          ItemFlags:
-            - HIDE_ENCHANTS
-            - HIDE_ATTRIBUTES
-          PublicBukkitValues:
-            advancedenchantments:rcbook_new: "FABLED"
-    # Another simple format with custom data
-    special_helmet:
+        DataVersion: 4440
+        id: minecraft:stone_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item2:
       slot: 2
-      material: NETHERITE_HELMET
-      name: "&4&lSpecial Helmet"
-      enchantments:
-        PROTECTION_ENVIRONMENTAL: 4
-        DURABILITY: 3
-      item-flags:
-        - HIDE_UNBREAKABLE
-        - HIDE_DESTROYS
-      custom-data:
-        customkit:level: 10
-        customkit:bound: true
-        owner: "PlayerName"
-    sword1:
-      material: DIAMOND_SWORD
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item3:
       slot: 3
-      name: "&b&lDiamond Sword"
-      lore:
-        - "&7A powerful sword"
-        - "&7for combat"
-      enchantments:
-        DAMAGE_ALL: 5
-        DURABILITY: 3
-        FIRE_ASPECT: 2
-    sword2:
-      material: NETHERITE_SWORD
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item4:
       slot: 4
-      name: "&4&lNetherite Sword"
-      lore:
-        - "&7The ultimate weapon"
-      enchantments:
-        DAMAGE_ALL: 5
-        DURABILITY: 3
-        SWEEPING_EDGE: 3
-    axe1:
-      material: DIAMOND_AXE
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item5:
       slot: 5
-      name: "&b&lDiamond Axe"
-      enchantments:
-        DAMAGE_ALL: 5
-        DIG_SPEED: 5
-    bow1:
-      material: BOW
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item6:
       slot: 6
-      name: "&6&lPower Bow"
-      enchantments:
-        ARROW_DAMAGE: 5
-        ARROW_INFINITE: 1
-        DURABILITY: 3
-    crossbow1:
-      material: CROSSBOW
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:trident
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item7:
       slot: 7
-      name: "&d&lQuick Crossbow"
-      enchantments:
-        QUICK_CHARGE: 3
-        MULTISHOT: 1
-  # Items added via /customkitadmin add will appear here with full serialization
-  page2:
-    golden_apple:
-      material: GOLDEN_APPLE
-      slot: 0
-      amount: 64
-      name: "&6Golden Apple"
-    enchanted_golden_apple:
-      material: ENCHANTED_GOLDEN_APPLE
-      slot: 1
-      amount: 16
-      name: "&d&lEnchanted Golden Apple"
-    ender_pearl:
-      material: ENDER_PEARL
-      slot: 2
-      amount: 16
-      name: "&5Ender Pearl"
-    speed_potion:
-      material: POTION
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:bow
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item8:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:crossbow
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item9:
       slot: 9
-      name: "&bSpeed II Potion"
-      lore:
-        - "&7Speed II (1:30)"
-      potion-effects:
-        SPEED:
-          duration: 90  # seconds
-          amplifier: 1
-    strength_potion:
-      material: POTION
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item10:
       slot: 10
-      name: "&cStrength II Potion"
-      lore:
-        - "&7Strength II (1:30)"
-      potion-effects:
-        INCREASE_DAMAGE:
-          duration: 90
-          amplifier: 1
-    healing_potion:
-      material: SPLASH_POTION
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item11:
       slot: 11
-      name: "&dInstant Health II"
-      lore:
-        - "&7Instant Health II"
-      potion-effects:
-        HEAL:
-          duration: 1
-          amplifier: 1
-    fire_resistance:
-      material: POTION
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item12:
       slot: 12
-      name: "&6Fire Resistance"
-      lore:
-        - "&7Fire Resistance (8:00)"
-      potion-effects:
-        FIRE_RESISTANCE:
-          duration: 480
-          amplifier: 0
-    arrows:
-      material: ARROW
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item13:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item14:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item15:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:fishing_rod
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item16:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:mace
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item17:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:shield
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item18:
       slot: 18
-      amount: 64
-      name: "&7Arrows"
-    firework:
-      material: FIREWORK_ROCKET
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item19:
       slot: 19
-      amount: 64
-      name: "&fFirework Rocket"
-    food1:
-      material: COOKED_BEEF
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item20:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item21:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item22:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item23:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item24:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:flint_and_steel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item25:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:elytra
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item26:
       slot: 27
-      amount: 64
-      name: "&7Steak"
-    food2:
-      material: GOLDEN_CARROT
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item27:
       slot: 28
-      amount: 64
-      name: "&6Golden Carrot"
-    blocks1:
-      material: OBSIDIAN
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item28:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item29:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item30:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item31:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item32:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:shears
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item33:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:happy_ghast_spawn_egg
+        count: 1
+        schema_version: 1
+    item34:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:white_harness
+        count: 1
+        schema_version: 1
+    item35:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:totem_of_undying
+        count: 1
+        schema_version: 1
+    item36:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:white_stained_glass_pane
+        count: 1
+        components:
+          minecraft:custom_name: '"§6Air"'
+        schema_version: 1
+    item37:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:turtle_helmet
+        count: 1
+        schema_version: 1
+    item38:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 1
+        components:
+          minecraft:profile: '{id:[I;870529782,-1410322370,-1092235640,-1786259567],name:"Skaian",properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWMyZmM4ZWI3NTRhN2YyOWM5NzIzOWVjMTQwY2UyM2U1MmIzMGE3NTJmZjM4YTkxYzM1Nzc5NWE0Njc3MjlmZCJ9fX0="}]}'
+        schema_version: 1
+      enchantgui: true
+    item39:
       slot: 36
-      amount: 64
-      name: "&5Obsidian"
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:water_bucket
+        count: 1
+        schema_version: 1
+    item40:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lava_bucket
+        count: 1
+        schema_version: 1
+    item41:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:powder_snow_bucket
+        count: 1
+        schema_version: 1
+    item42:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pufferfish_bucket
+        count: 1
+        schema_version: 1
+    item43:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:experience_bottle
+        count: 64
+        schema_version: 1
+  page2:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 64
+        schema_version: 1
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 16
+        schema_version: 1
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 4
+        schema_version: 1
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 2
+        schema_version: 1
+    item4:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 64
+        schema_version: 1
+    item5:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 32
+        schema_version: 1
+    item6:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 16
+        schema_version: 1
+    item7:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 8
+        schema_version: 1
+    item8:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 4
+        schema_version: 1
+    item9:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 64
+        schema_version: 1
+    item10:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 32
+        schema_version: 1
+    item11:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 16
+        schema_version: 1
+    item12:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 8
+        schema_version: 1
+    item13:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:melon_slice
+        count: 64
+        schema_version: 1
+    item14:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_porkchop
+        count: 64
+        schema_version: 1
+    item15:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_beef
+        count: 64
+        schema_version: 1
+    item16:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cake
+        count: 1
+        schema_version: 1
+    item17:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:suspicious_stew
+        count: 1
+        components:
+          minecraft:suspicious_stew_effects: '[{duration:7,id:"minecraft:saturation"}]'
+        schema_version: 1
+    item18:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:mushroom_stew
+        count: 1
+        schema_version: 1
+    item19:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:beetroot_soup
+        count: 1
+        schema_version: 1
+    item20:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:rabbit_stew
+        count: 1
+        schema_version: 1
+    item21:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:milk_bucket
+        count: 1
+        schema_version: 1
+    item22:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cookie
+        count: 64
+        schema_version: 1
+    item23:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cookie
+        count: 32
+        schema_version: 1
+    item24:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cookie
+        count: 16
+        schema_version: 1
+    item25:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_mutton
+        count: 64
+        schema_version: 1
+    item26:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_mutton
+        count: 16
+        schema_version: 1
+    item27:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:melon_slice
+        count: 16
+        schema_version: 1
+    item28:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_porkchop
+        count: 16
+        schema_version: 1
+    item29:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_beef
+        count: 16
+        schema_version: 1
+    item30:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pumpkin_pie
+        count: 64
+        schema_version: 1
+    item31:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pumpkin_pie
+        count: 32
+        schema_version: 1
+    item32:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pumpkin_pie
+        count: 16
+        schema_version: 1
+    item33:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_chicken
+        count: 64
+        schema_version: 1
+    item34:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_chicken
+        count: 16
+        schema_version: 1
+    item35:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_rabbit
+        count: 64
+        schema_version: 1
+    item36:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_rabbit
+        count: 16
+        schema_version: 1
+    item37:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:dried_kelp
+        count: 64
+        schema_version: 1
+    item38:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:dried_kelp
+        count: 16
+        schema_version: 1
+  page3:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:arrow
+        count: 64
+        schema_version: 1
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:spectral_arrow
+        count: 64
+        schema_version: 1
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_strength"}'
+        schema_version: 1
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:weakness"}'
+        schema_version: 1
+    item4:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_weakness"}'
+        schema_version: 1
+    item5:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:slow_falling"}'
+        schema_version: 1
+    item6:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_slow_falling"}'
+        schema_version: 1
+    item7:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:wind_charged"}'
+        schema_version: 1
+    item8:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:weaving"}'
+        schema_version: 1
+    item9:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strength"}'
+        schema_version: 1
+    item10:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_strength"}'
+        schema_version: 1
+    item11:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:night_vision"}'
+        schema_version: 1
+    item12:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_night_vision"}'
+        schema_version: 1
+    item13:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:invisibility"}'
+        schema_version: 1
+    item14:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_invisibility"}'
+        schema_version: 1
+    item15:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:leaping"}'
+        schema_version: 1
+    item16:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_leaping"}'
+        schema_version: 1
+    item17:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_leaping"}'
+        schema_version: 1
+    item18:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:fire_resistance"}'
+        schema_version: 1
+    item19:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_fire_resistance"}'
+        schema_version: 1
+    item20:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:swiftness"}'
+        schema_version: 1
+    item21:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_swiftness"}'
+        schema_version: 1
+    item22:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_swiftness"}'
+        schema_version: 1
+    item23:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:slowness"}'
+        schema_version: 1
+    item24:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_slowness"}'
+        schema_version: 1
+    item25:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_turtle_master"}'
+        schema_version: 1
+    item26:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:healing"}'
+        schema_version: 1
+    item27:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_healing"}'
+        schema_version: 1
+    item28:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:harming"}'
+        schema_version: 1
+    item29:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+        schema_version: 1
+    item30:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:poison"}'
+        schema_version: 1
+    item31:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_poison"}'
+        schema_version: 1
+    item32:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_poison"}'
+        schema_version: 1
+    item33:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:regeneration"}'
+        schema_version: 1
+    item34:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_regeneration"}'
+        schema_version: 1
+    item35:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_regeneration"}'
+        schema_version: 1
+    item36:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:arrow
+        count: 16
+        schema_version: 1
+    item37:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 16
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:harming"}'
+        schema_version: 1
+    item38:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 16
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+        schema_version: 1
+    item39:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 16
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:infested"}'
+        schema_version: 1
+    item40:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:infested"}'
+        schema_version: 1
+    item41:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 64
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:oozing"}'
+        schema_version: 1
+    item42:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:arrow
+        count: 8
+        schema_version: 1
+    item43:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 8
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:harming"}'
+        schema_version: 1
+    item44:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tipped_arrow
+        count: 8
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+        schema_version: 1
+  page4:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wind_charge
+        count: 64
+        schema_version: 1
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wind_charge
+        count: 32
+        schema_version: 1
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wind_charge
+        count: 16
+        schema_version: 1
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wind_charge
+        count: 8
+        schema_version: 1
+    item4:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wind_charge
+        count: 4
+        schema_version: 1
+    item5:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wind_charge
+        count: 2
+        schema_version: 1
+    item6:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 16
+        schema_version: 1
+    item7:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 32
+        schema_version: 1
+    item8:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 64
+        schema_version: 1
+    item9:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:snowball
+        count: 16
+        schema_version: 1
+    item10:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:snowball
+        count: 8
+        schema_version: 1
+    item11:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:snowball
+        count: 4
+        schema_version: 1
+    item12:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:egg
+        count: 16
+        schema_version: 1
+    item13:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:egg
+        count: 8
+        schema_version: 1
+    item14:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:egg
+        count: 4
+        schema_version: 1
+    item15:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 64
+        components:
+          minecraft:fireworks: '{flight_duration:2b}'
+        schema_version: 1
+    item16:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 32
+        components:
+          minecraft:fireworks: '{flight_duration:2b}'
+        schema_version: 1
+    item17:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 16
+        components:
+          minecraft:fireworks: '{flight_duration:2b}'
+        schema_version: 1
+    item18:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:rail
+        count: 64
+        schema_version: 1
+    item19:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:rail
+        count: 32
+        schema_version: 1
+    item20:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:rail
+        count: 16
+        schema_version: 1
+    item21:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ender_pearl
+        count: 16
+        schema_version: 1
+    item22:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ender_pearl
+        count: 8
+        schema_version: 1
+    item23:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ender_pearl
+        count: 4
+        schema_version: 1
+    item24:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 16
+        components:
+          minecraft:fireworks: '{flight_duration:3b}'
+        schema_version: 1
+    item25:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 32
+        components:
+          minecraft:fireworks: '{flight_duration:3b}'
+        schema_version: 1
+    item26:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:firework_rocket
+        count: 64
+        components:
+          minecraft:fireworks: '{flight_duration:3b}'
+        schema_version: 1
+    item27:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:trial_spawner
+        count: 32
+        schema_version: 1
+    item28:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:trial_spawner
+        count: 16
+        schema_version: 1
+    item29:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:trial_spawner
+        count: 8
+        schema_version: 1
+    item30:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ominous_trial_key
+        count: 32
+        schema_version: 1
+    item31:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ominous_trial_key
+        count: 16
+        schema_version: 1
+    item32:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ominous_trial_key
+        count: 8
+        schema_version: 1
+    item33:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:end_crystal
+        count: 16
+        schema_version: 1
+    item34:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:end_crystal
+        count: 32
+        schema_version: 1
+    item35:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:end_crystal
+        count: 64
+        schema_version: 1
+    item36:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:minecart
+        count: 1
+        schema_version: 1
+    item37:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tnt_minecart
+        count: 1
+        schema_version: 1
+    item38:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tnt
+        count: 64
+        schema_version: 1
+    item39:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tnt
+        count: 32
+        schema_version: 1
+    item40:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:tnt
+        count: 16
+        schema_version: 1
+    item41:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:oak_pressure_plate
+        count: 64
+        schema_version: 1
+    item42:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:obsidian
+        count: 16
+        schema_version: 1
+    item43:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:obsidian
+        count: 32
+        schema_version: 1
+    item44:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:obsidian
+        count: 64
+        schema_version: 1
+  page5:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:healing"}'
+        schema_version: 1
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_healing"}'
+        schema_version: 1
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:swiftness"}'
+        schema_version: 1
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_swiftness"}'
+        schema_version: 1
+    item4:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_swiftness"}'
+        schema_version: 1
+    item5:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:night_vision"}'
+        schema_version: 1
+    item6:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_night_vision"}'
+        schema_version: 1
+    item7:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:invisibility"}'
+        schema_version: 1
+    item8:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_invisibility"}'
+        schema_version: 1
+    item9:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:leaping"}'
+        schema_version: 1
+    item10:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_leaping"}'
+        schema_version: 1
+    item11:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_leaping"}'
+        schema_version: 1
+    item12:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:fire_resistance"}'
+        schema_version: 1
+    item13:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_fire_resistance"}'
+        schema_version: 1
+    item14:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:turtle_master"}'
+        schema_version: 1
+    item15:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_turtle_master"}'
+        schema_version: 1
+    item16:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_turtle_master"}'
+        schema_version: 1
+    item17:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:healing"}'
+        schema_version: 1
+    item18:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_healing"}'
+        schema_version: 1
+    item19:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:regeneration"}'
+        schema_version: 1
+    item20:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_regeneration"}'
+        schema_version: 1
+    item21:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_regeneration"}'
+        schema_version: 1
+    item22:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strength"}'
+        schema_version: 1
+    item23:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_strength"}'
+        schema_version: 1
+    item24:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_strength"}'
+        schema_version: 1
+    item25:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:luck"}'
+        schema_version: 1
+    item26:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:slow_falling"}'
+        schema_version: 1
+    item27:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_slow_falling"}'
+        schema_version: 1
+    item28:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:night_vision"}'
+        schema_version: 1
+    item29:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_night_vision"}'
+        schema_version: 1
+    item30:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:leaping"}'
+        schema_version: 1
+    item31:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_leaping"}'
+        schema_version: 1
+    item32:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_leaping"}'
+        schema_version: 1
+    item33:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:fire_resistance"}'
+        schema_version: 1
+    item34:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_fire_resistance"}'
+        schema_version: 1
+    item35:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:swiftness"}'
+        schema_version: 1
+    item36:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_swiftness"}'
+        schema_version: 1
+    item37:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_swiftness"}'
+        schema_version: 1
+    item38:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:slowness"}'
+        schema_version: 1
+    item39:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_slowness"}'
+        schema_version: 1
+    item40:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_slowness"}'
+        schema_version: 1
+    item41:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:turtle_master"}'
+        schema_version: 1
+    item42:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_turtle_master"}'
+        schema_version: 1
+    item43:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_turtle_master"}'
+        schema_version: 1
+    item44:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:harming"}'
+        schema_version: 1
+  page6:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+        schema_version: 1
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:poison"}'
+        schema_version: 1
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_poison"}'
+        schema_version: 1
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_poison"}'
+        schema_version: 1
+    item4:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:regeneration"}'
+        schema_version: 1
+    item5:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_regeneration"}'
+        schema_version: 1
+    item6:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_regeneration"}'
+        schema_version: 1
+    item7:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strength"}'
+        schema_version: 1
+    item8:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_strength"}'
+        schema_version: 1
+    item9:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_strength"}'
+        schema_version: 1
+    item10:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:weakness"}'
+        schema_version: 1
+    item11:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_weakness"}'
+        schema_version: 1
+    item12:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:slow_falling"}'
+        schema_version: 1
+    item13:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_slow_falling"}'
+        schema_version: 1
+    item14:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:wind_charged"}'
+        schema_version: 1
+    item15:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:weaving"}'
+        schema_version: 1
+    item16:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:oozing"}'
+        schema_version: 1
+    item17:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:splash_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:infested"}'
+        schema_version: 1
+    item18:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:leaping"}'
+        schema_version: 1
+    item19:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_leaping"}'
+        schema_version: 1
+    item20:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_leaping"}'
+        schema_version: 1
+    item21:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:fire_resistance"}'
+        schema_version: 1
+    item22:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_fire_resistance"}'
+        schema_version: 1
+    item23:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:swiftness"}'
+        schema_version: 1
+    item24:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_swiftness"}'
+        schema_version: 1
+    item25:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_swiftness"}'
+        schema_version: 1
+    item26:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:slowness"}'
+        schema_version: 1
+    item27:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_slowness"}'
+        schema_version: 1
+    item28:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_slowness"}'
+        schema_version: 1
+    item29:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:turtle_master"}'
+        schema_version: 1
+    item30:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_turtle_master"}'
+        schema_version: 1
+    item31:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_turtle_master"}'
+        schema_version: 1
+    item32:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:healing"}'
+        schema_version: 1
+    item33:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_healing"}'
+        schema_version: 1
+    item34:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:harming"}'
+        schema_version: 1
+    item35:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+        schema_version: 1
+    item36:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_poison"}'
+        schema_version: 1
+    item37:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_poison"}'
+        schema_version: 1
+    item38:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_regeneration"}'
+        schema_version: 1
+    item39:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_regeneration"}'
+        schema_version: 1
+    item40:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strength"}'
+        schema_version: 1
+    item41:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_strength"}'
+        schema_version: 1
+    item42:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:strong_strength"}'
+        schema_version: 1
+    item43:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_slow_falling"}'
+        schema_version: 1
+    item44:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lingering_potion
+        count: 1
+        components:
+          minecraft:potion_contents: '{potion:"minecraft:long_weakness"}'
+        schema_version: 1
