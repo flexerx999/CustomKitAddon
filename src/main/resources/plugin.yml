@@ -1,7 +1,7 @@
 name: CustomKitAddon
 version: ${project.version}
 main: com.strikepractice.customkitaddon.CustomKitAddon
-author: [Skaian, destiall]
+author: [Skaian+AI, destiall]
 description: Advanced Custom Kit addon for StrikePractice
 api-version: '1.21'
 softdepend: [StrikePractice]
