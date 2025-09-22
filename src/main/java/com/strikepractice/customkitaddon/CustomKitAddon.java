@@ -6,11 +6,11 @@ import com.strikepractice.customkitaddon.commands.DebugCommand;
 import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;
-import com.strikepractice.customkitaddon.listeners.EloChangeListener;
 import com.strikepractice.customkitaddon.listeners.InventoryClickListener;
 import com.strikepractice.customkitaddon.listeners.StrikePracticeListener;
 import ga.strikepractice.StrikePractice;
 import ga.strikepractice.api.StrikePracticeAPI;
+import ga.strikepractice.fights.elo.EloCalculator;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -56,6 +56,8 @@ public class CustomKitAddon extends JavaPlugin {
         // Register listeners
         registerListeners();
 
+        registerEloCalculator();
+
         getLogger().info("CustomKitAddon v" + getDescription().getVersion() + " has been enabled!");
         getLogger().info("Hooked into StrikePractice successfully!");
 
@@ -93,12 +95,19 @@ public class CustomKitAddon extends JavaPlugin {
     private void registerListeners() {
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(this), this);
         Bukkit.getPluginManager().registerEvents(new StrikePracticeListener(this), this);
-        Bukkit.getPluginManager().registerEvents(new EloChangeListener(this), this);
+        //Bukkit.getPluginManager().registerEvents(new EloChangeListener(this), this);
 
         // Log if fixated ELO is enabled
         if (configManager.isFixatedEloEnabled()) {
             getLogger().info("Fixated ELO is ENABLED - Changes set to: +" + configManager.getEloChangeAmount() + "/-" + configManager.getEloChangeAmount());
         }
+    }
+
+    private void registerEloCalculator() {
+        EloCalculator.setEloCalculator(eloChanges -> {
+            eloChanges.setWinnerNewElo(eloChanges.getWinnerOldElo() + getConfigManager().getEloChangeAmount());
+            eloChanges.setLoserNewElo(eloChanges.getLoserNewElo() - getConfigManager().getEloChangeAmount());
+        });
     }
 
     public void reload() {
