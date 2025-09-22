@@ -8,15 +8,14 @@ gui:
 
 # Settings
 settings:
-  debug: true  # Enable for troubleshooting
-  rename-timeout: 30  # Seconds before rename times out
+  debug: false  # Enable for troubleshooting
   sounds:
     enabled: true
     select: "ENTITY_EXPERIENCE_ORB_PICKUP"
 
-# ELO Settings
+# ELO Settings - To be working soon, keep false
 elo:
-  fixated-elo: true  # Enable fixed ELO changes
+  fixated-elo: false  # Enable fixed ELO changes
   elo-change: 91     # Amount of ELO to add/subtract (winner gets +, loser gets -)
 
 # Messages
