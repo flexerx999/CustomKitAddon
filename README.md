@@ -2,9 +2,9 @@
 
 **Multi-page custom items GUI** - customisable amount of pages with navigation, opened on clicking on blank slots in **/customkit**.
 
-**Admin commands** - [ /customkitadmin add ] and [ /customkitadmin reload ].
+**Admin commands** - [ /customkitadmin add ] and [ /customkitadmin reload ]
 
-**Permissions** - customkit.use and customkit.admin.
+**Permissions** - customkit.use and customkit.admin
 
 **Full YAML config** - Custom items with all types of data involved, metadata and skulls support.
 
