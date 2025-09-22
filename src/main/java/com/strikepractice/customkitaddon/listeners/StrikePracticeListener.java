@@ -30,8 +30,6 @@ public class StrikePracticeListener implements Listener {
         if (plugin.getGuiManager().hasOpenGUI(player)) {
             plugin.getGuiManager().closeGUI(player);
         }
-
-        plugin.getChatListener().cancelRename(player);
     }
 
     @EventHandler
@@ -52,8 +50,5 @@ public class StrikePracticeListener implements Listener {
         if (plugin.getGuiManager().hasOpenGUI(player)) {
             plugin.getGuiManager().closeGUI(player);
         }
-
-        // Cancel any rename sessions
-        plugin.getChatListener().cancelRename(player);
     }
 }

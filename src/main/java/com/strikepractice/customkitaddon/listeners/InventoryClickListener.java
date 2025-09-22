@@ -64,16 +64,6 @@ public class InventoryClickListener implements Listener {
             if (plugin.getConfigManager().isDebugEnabled()) {
                 plugin.getLogger().info("Detected Custom Kit Icon GUI - checking for rename");
             }
-
-            // Force close inventory and start rename process
-            event.setCancelled(true);
-
-            Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
-                Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                    startRenameProcess(player);
-                }, 1L);
-            }, 1L);
             return;
         }
 
@@ -113,15 +103,6 @@ public class InventoryClickListener implements Listener {
                 if (plugin.getConfigManager().isDebugEnabled()) {
                     plugin.getLogger().info("Rename slot clicked - force closing GUI");
                 }
-
-                // Start rename process after ensuring closure
-                Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                    player.closeInventory(InventoryCloseEvent.Reason.PLUGIN);
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                        startRenameProcess(player);
-                    }, 1L);
-                }, 1L);
-                return;
             }
 
             // ONLY handle item slots (18-53)
@@ -145,13 +126,5 @@ public class InventoryClickListener implements Listener {
 
             }
         }
-    }
-
-    private void startRenameProcess(Player player) {
-        // Start chat-based rename
-        plugin.getChatListener().startRename(player);
-
-        player.sendMessage(plugin.getConfigManager().getMessage("rename-prompt"));
-        player.sendMessage(plugin.getConfigManager().getMessage("rename-cancel-info"));
     }
 }

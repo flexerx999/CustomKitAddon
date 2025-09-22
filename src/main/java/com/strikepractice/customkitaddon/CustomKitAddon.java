@@ -6,7 +6,6 @@ import com.strikepractice.customkitaddon.commands.DebugCommand;
 import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;
-import com.strikepractice.customkitaddon.listeners.ChatListener;
 import com.strikepractice.customkitaddon.listeners.EloChangeListener;
 import com.strikepractice.customkitaddon.listeners.InventoryClickListener;
 import com.strikepractice.customkitaddon.listeners.StrikePracticeListener;
@@ -23,7 +22,6 @@ public class CustomKitAddon extends JavaPlugin {
     private ConfigManager configManager;
     private ItemsConfig itemsConfig;
     private GUIManager guiManager;
-    private ChatListener chatListener;
     private CustomKitCommand customKitCommand;
 
     @Override
@@ -69,9 +67,6 @@ public class CustomKitAddon extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        if (chatListener != null) {
-            chatListener.cleanup();
-        }
         getLogger().info("CustomKitAddon has been disabled!");
         HandlerList.unregisterAll(this);
     }
@@ -96,13 +91,8 @@ public class CustomKitAddon extends JavaPlugin {
     }
 
     private void registerListeners() {
-        chatListener = new ChatListener(this);
-
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(this), this);
-        Bukkit.getPluginManager().registerEvents(chatListener, this);
         Bukkit.getPluginManager().registerEvents(new StrikePracticeListener(this), this);
-
-        // Register the new ELO listener
         Bukkit.getPluginManager().registerEvents(new EloChangeListener(this), this);
 
         // Log if fixated ELO is enabled
@@ -136,10 +126,6 @@ public class CustomKitAddon extends JavaPlugin {
 
     public GUIManager getGuiManager() {
         return guiManager;
-    }
-
-    public ChatListener getChatListener() {
-        return chatListener;
     }
 
     public CustomKitCommand getCustomKitCommand() {

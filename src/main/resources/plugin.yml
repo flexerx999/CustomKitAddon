@@ -37,6 +37,3 @@ permissions:
   customkit.admin.debug:
     description: Use debug commands
     default: op
-  customkit.rename:
-    description: Rename kits via chat
-    default: true
