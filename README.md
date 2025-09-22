@@ -1,10 +1,15 @@
 # 🎉 CustomKitAddon - Customkit Silly Addon
 
 **Multi-page custom items GUI** - customisable amount of pages with navigation, opened on clicking on blank slots in **/customkit**.
+
 **Admin commands** - [ /customkitadmin add ] and [ /customkitadmin reload ].
-**Permissions** - customkit.use and customkit.admin
+
+**Permissions** - customkit.use and customkit.admin.
+
 **Full YAML config** - Custom items with all types of data involved, metadata and skulls support.
+
 **Enchantment GUI** - Added a Custom GUI for enchants, different type of enchants list for each different item.
+
 **Pre-made Items** - All types of supported items with options involved for enchants gui installed on jar drop.
 
 # CustomKitAddon Project Structure + Instructions
