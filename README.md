@@ -63,4 +63,12 @@ CustomKitAddon/
 │
 ├── pom.xml (Maven configuration)
 ├── README.md (Documentation)
-└── .gitignore (Git ignore file)```
+└── .gitignore (Git ignore file)
+```
+Plans For Future mebeeee:
+- Fix Elo changer.
+- Armor changer support
+- Item amount changer
+- Shulker addon idk lmao
+
+Current Known Issues: Once in a hundred, the menu shows strikepractice menu rather than the custom one, will be fixed hopefully.
