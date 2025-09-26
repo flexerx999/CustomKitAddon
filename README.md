@@ -66,7 +66,6 @@ CustomKitAddon/
 └── .gitignore (Git ignore file)
 ```
 Plans For Future mebeeee:
-- Fix Elo changer.
 - Armor changer support
 - Item amount changer
 - Shulker addon idk lmao
