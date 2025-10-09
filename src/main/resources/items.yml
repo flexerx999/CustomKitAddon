@@ -3,712 +3,6 @@
 # Each item can have special properties, enchantments, and attributes
 
 items:
-  page1:
-    item0:
-      slot: 0
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:wooden_sword
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item1:
-      slot: 1
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:stone_sword
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item2:
-      slot: 2
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:iron_sword
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item3:
-      slot: 3
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_sword
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item4:
-      slot: 4
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:diamond_sword
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item5:
-      slot: 5
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:netherite_sword
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item6:
-      slot: 6
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:trident
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item7:
-      slot: 7
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:bow
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item8:
-      slot: 8
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:crossbow
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item9:
-      slot: 9
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:wooden_axe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item10:
-      slot: 10
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:stone_axe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item11:
-      slot: 11
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:iron_axe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item12:
-      slot: 12
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_axe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item13:
-      slot: 13
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:diamond_axe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item14:
-      slot: 14
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:netherite_axe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item15:
-      slot: 15
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:fishing_rod
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item16:
-      slot: 16
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:mace
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item17:
-      slot: 17
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:shield
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item18:
-      slot: 18
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:wooden_pickaxe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item19:
-      slot: 19
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:stone_pickaxe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item20:
-      slot: 20
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:iron_pickaxe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item21:
-      slot: 21
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_pickaxe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item22:
-      slot: 22
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:diamond_pickaxe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item23:
-      slot: 23
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:netherite_pickaxe
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item24:
-      slot: 24
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:flint_and_steel
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item25:
-      slot: 25
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:elytra
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item26:
-      slot: 27
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:wooden_shovel
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item27:
-      slot: 28
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:stone_shovel
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item28:
-      slot: 29
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:iron_shovel
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item29:
-      slot: 30
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_shovel
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item30:
-      slot: 31
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:diamond_shovel
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item31:
-      slot: 32
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:netherite_shovel
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item32:
-      slot: 26
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:shears
-        count: 1
-        schema_version: 1
-      enchantgui: true
-    item33:
-      slot: 33
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:happy_ghast_spawn_egg
-        count: 1
-        schema_version: 1
-    item34:
-      slot: 34
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:white_harness
-        count: 1
-        schema_version: 1
-    item35:
-      slot: 35
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:totem_of_undying
-        count: 1
-        schema_version: 1
-    item36:
-      slot: 40
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:white_stained_glass_pane
-        count: 1
-        components:
-          minecraft:custom_name: '"§6Air"'
-        schema_version: 1
-    item37:
-      slot: 39
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:turtle_helmet
-        count: 1
-        schema_version: 1
-    item38:
-      slot: 41
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:player_head
-        count: 1
-        components:
-          minecraft:profile: '{id:[I;870529782,-1410322370,-1092235640,-1786259567],name:"Skaian",properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWMyZmM4ZWI3NTRhN2YyOWM5NzIzOWVjMTQwY2UyM2U1MmIzMGE3NTJmZjM4YTkxYzM1Nzc5NWE0Njc3MjlmZCJ9fX0="}]}'
-        schema_version: 1
-      enchantgui: true
-    item39:
-      slot: 36
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:water_bucket
-        count: 1
-        schema_version: 1
-    item40:
-      slot: 37
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:lava_bucket
-        count: 1
-        schema_version: 1
-    item41:
-      slot: 44
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:powder_snow_bucket
-        count: 1
-        schema_version: 1
-    item42:
-      slot: 43
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:pufferfish_bucket
-        count: 1
-        schema_version: 1
-    item43:
-      slot: 38
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:experience_bottle
-        count: 64
-        schema_version: 1
-  page2:
-    item0:
-      slot: 0
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:enchanted_golden_apple
-        count: 64
-        schema_version: 1
-    item1:
-      slot: 1
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:enchanted_golden_apple
-        count: 16
-        schema_version: 1
-    item2:
-      slot: 2
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:enchanted_golden_apple
-        count: 4
-        schema_version: 1
-    item3:
-      slot: 3
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:enchanted_golden_apple
-        count: 2
-        schema_version: 1
-    item4:
-      slot: 9
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_apple
-        count: 64
-        schema_version: 1
-    item5:
-      slot: 10
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_apple
-        count: 32
-        schema_version: 1
-    item6:
-      slot: 11
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_apple
-        count: 16
-        schema_version: 1
-    item7:
-      slot: 12
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_apple
-        count: 8
-        schema_version: 1
-    item8:
-      slot: 13
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_apple
-        count: 4
-        schema_version: 1
-    item9:
-      slot: 18
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_carrot
-        count: 64
-        schema_version: 1
-    item10:
-      slot: 19
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_carrot
-        count: 32
-        schema_version: 1
-    item11:
-      slot: 20
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_carrot
-        count: 16
-        schema_version: 1
-    item12:
-      slot: 21
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:golden_carrot
-        count: 8
-        schema_version: 1
-    item13:
-      slot: 27
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:melon_slice
-        count: 64
-        schema_version: 1
-    item14:
-      slot: 28
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_porkchop
-        count: 64
-        schema_version: 1
-    item15:
-      slot: 29
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_beef
-        count: 64
-        schema_version: 1
-    item16:
-      slot: 30
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cake
-        count: 1
-        schema_version: 1
-    item17:
-      slot: 31
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:suspicious_stew
-        count: 1
-        components:
-          minecraft:suspicious_stew_effects: '[{duration:7,id:"minecraft:saturation"}]'
-        schema_version: 1
-    item18:
-      slot: 32
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:mushroom_stew
-        count: 1
-        schema_version: 1
-    item19:
-      slot: 33
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:beetroot_soup
-        count: 1
-        schema_version: 1
-    item20:
-      slot: 34
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:rabbit_stew
-        count: 1
-        schema_version: 1
-    item21:
-      slot: 35
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:milk_bucket
-        count: 1
-        schema_version: 1
-    item22:
-      slot: 8
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cookie
-        count: 64
-        schema_version: 1
-    item23:
-      slot: 7
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cookie
-        count: 32
-        schema_version: 1
-    item24:
-      slot: 6
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cookie
-        count: 16
-        schema_version: 1
-    item25:
-      slot: 17
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_mutton
-        count: 64
-        schema_version: 1
-    item26:
-      slot: 16
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_mutton
-        count: 16
-        schema_version: 1
-    item27:
-      slot: 36
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:melon_slice
-        count: 16
-        schema_version: 1
-    item28:
-      slot: 37
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_porkchop
-        count: 16
-        schema_version: 1
-    item29:
-      slot: 38
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_beef
-        count: 16
-        schema_version: 1
-    item30:
-      slot: 26
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:pumpkin_pie
-        count: 64
-        schema_version: 1
-    item31:
-      slot: 25
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:pumpkin_pie
-        count: 32
-        schema_version: 1
-    item32:
-      slot: 24
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:pumpkin_pie
-        count: 16
-        schema_version: 1
-    item33:
-      slot: 39
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_chicken
-        count: 64
-        schema_version: 1
-    item34:
-      slot: 40
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_chicken
-        count: 16
-        schema_version: 1
-    item35:
-      slot: 41
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_rabbit
-        count: 64
-        schema_version: 1
-    item36:
-      slot: 42
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:cooked_rabbit
-        count: 16
-        schema_version: 1
-    item37:
-      slot: 43
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:dried_kelp
-        count: 64
-        schema_version: 1
-    item38:
-      slot: 44
-      data_type: default
-      data:
-        DataVersion: 4440
-        id: minecraft:dried_kelp
-        count: 16
-        schema_version: 1
   page3:
     item0:
       slot: 0
@@ -2426,4 +1720,2138 @@ items:
         count: 1
         components:
           minecraft:potion_contents: '{potion:"minecraft:long_weakness"}'
+        schema_version: 1
+  #These are from Custom Plugins mostly, like ItemCatalog, AdvancedEnchantments and ntdLuckyBlock
+  page7:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:fire_charge
+        count: 64
+        schema_version: 1
+    item1:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:fire_charge
+        count: 16
+        schema_version: 1
+    item2:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:music_disc_tears
+        count: 1
+        schema_version: 1
+    item3:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:music_disc_lava_chicken
+        count: 1
+        schema_version: 1
+    item4:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:music_disc_creator_music_box
+        count: 1
+        schema_version: 1
+    item5:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:jukebox
+        count: 1
+        schema_version: 1
+    item6:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_hoe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            very very cold weapon",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Snowball
+            fight"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Shoots
+            a snowball and slows the hit entity",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FFFFFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Snow
+            Wand",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"SnowWand"}}'
+        schema_version: 1
+    item7:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_sword
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Is
+            that a Baxter reference?",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            HIT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Sandy Eyes"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            Blindness ",underlined:0b},{color:"green",italic:0b,text:"I "},{color:"gray",italic:0b,text:"to
+            the hit enemy"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"for
+            ",underlined:0b},{color:"green",italic:0b,text:"5 "},{color:"gray",italic:0b,text:"seconds.
+            If already blinded,"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"deals
+            ",underlined:0b},{color:"red",italic:0b,text:"+20"},{color:"gray",italic:0b,text:"%
+            damage instead."}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FFFD8A",italic:0b,obfuscated:0b,strikethrough:0b,text:"Sandstorm
+            Dagger",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"SandstormDagger"}}'
+        schema_version: 1
+    item8:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:torch
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Light
+            up your way",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"WHEN
+            HELD ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Let there
+            be light"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            Night Vision when held",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FFF240",italic:0b,obfuscated:0b,strikethrough:0b,text:"Torch
+            Of Light",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"TorchOfLight"}}'
+        schema_version: 1
+    item9:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_chestplate
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Forged
+            with the strength of titans",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"PASSIVE
+            ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Titan’s Resilience"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"When
+            below ",underlined:0b},{color:"red",italic:0b,text:"30% HP"},{color:"gray",italic:0b,text:",
+            gain temporary max health"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"and
+            absorption shield for ",underlined:0b},{color:"green",italic:0b,text:"8s"},{color:"gray",italic:0b,text:"."}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"20"},{color:"gray",italic:0b,text:"s"}],text:""},"",{extra:[{bold:0b,color:"black",italic:0b,obfuscated:1b,strikethrough:0b,text:"XX",underlined:0b},{color:"gold",italic:1b,obfuscated:0b,text:"TITAN"},{color:"black",italic:0b,obfuscated:1b,text:"XX"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FFCC00",italic:0b,obfuscated:0b,strikethrough:0b,text:"Titan
+            Chestplate",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"TitanChestplate"}}'
+        schema_version: 1
+    item10:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_hoe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            gauntlet that feeds off your foes",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Hunger Drain"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Drains
+            2 hunger from all nearby mobs",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"and
+            restores it to you.",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"10"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FF66CC",italic:0b,obfuscated:0b,strikethrough:0b,text:"Siphon
+            Gauntlet",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"SiphonGauntlet"}}'
+        schema_version: 1
+    item11:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:blaze_rod
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            Staff straight from Hell",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Fireball"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Shoots
+            a Fireball",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"3"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FF6017",italic:0b,obfuscated:0b,strikethrough:0b,text:"Inferno
+            Staff",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"InfernoStaff"}}'
+        schema_version: 1
+    item12:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_sword
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            sword made from the essence of The End",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Teleport
+            Slash"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Teleports
+            to the nearest entity and",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"deals
+            ",underlined:0b},{color:"red",italic:0b,text:"2 "},{color:"gray",italic:0b,text:"damage."}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"aqua",italic:0b,text:"10s"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Range:
+            ",underlined:0b},{color:"green",italic:0b,text:"15 "},{color:"gray",italic:0b,text:"blocks"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FCFB95",italic:0b,obfuscated:0b,strikethrough:0b,text:"Ender
+            Sword",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"EnderSword"}}'
+        schema_version: 1
+    item13:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_chestplate
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Not
+            very vegan",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"WHEN
+            WORN ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Slow Falling"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            you permanent Slow Falling ",underlined:0b},{color:"green",italic:0b,text:"I"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FCEABD",italic:0b,obfuscated:0b,strikethrough:0b,text:"Chicken
+            Wings",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"ChickenWings"}}'
+        schema_version: 1
+    item14:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_sword
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            fire hazard",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Fire Slash"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Sets
+            the ",underlined:0b},{color:"green",italic:0b,text:"7"},{color:"gray",italic:0b,text:"
+            blocks on fire"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"10"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#F77148",italic:0b,obfuscated:0b,strikethrough:0b,text:"Flame
+            Sword",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"FlameSword"}}'
+        schema_version: 1
+    item15:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:bow
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            Deadly weapon",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            ENTITY HIT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Bullseye"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"If
+            the initial shot of the bow is a hit",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"2
+            ",underlined:0b},{color:"gray",italic:0b,text:"more arrows drop from above,
+            hitting"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"the
+            target.",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#E973B3",italic:0b,obfuscated:0b,strikethrough:0b,text:"E",underlined:0b},{bold:0b,color:"#DF6FB5",italic:0b,obfuscated:0b,strikethrough:0b,text:"c",underlined:0b},{bold:0b,color:"#D46CB6",italic:0b,obfuscated:0b,strikethrough:0b,text:"h",underlined:0b},{bold:0b,color:"#CA68B8",italic:0b,obfuscated:0b,strikethrough:0b,text:"o
+            ",underlined:0b},{bold:0b,color:"#B560BB",italic:0b,obfuscated:0b,strikethrough:0b,text:"B",underlined:0b},{bold:0b,color:"#AA5DBC",italic:0b,obfuscated:0b,strikethrough:0b,text:"o",underlined:0b},{bold:0b,color:"#A059BE",italic:0b,obfuscated:0b,strikethrough:0b,text:"w",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"EchoBow"}}'
+        schema_version: 1
+    item16:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:snowball
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Hunter''s
+            asset",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Pokeball"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Throws
+            a snowball and traps the entity in cobweb if hit",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"The
+            cobwebs despawn after ",underlined:0b},{color:"green",italic:0b,text:"15"},{color:"gray",italic:0b,text:"s"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"30"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#D1FFFC",italic:0b,obfuscated:0b,strikethrough:0b,text:"Hunter''s
+            Net",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"HuntersNet"}}'
+        schema_version: 1
+    item17:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_leggings
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Pretty
+            intimate",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"WHEN
+            WORN ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Strength"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            permanent Strength ",underlined:0b},{color:"green",italic:0b,text:"I"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#C29FA5",italic:0b,obfuscated:0b,strikethrough:0b,text:"Golem
+            Underwear",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"GolemUnderwear"}}'
+        schema_version: 1
+    item18:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_sword
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"The
+            blade bites deeper each time...",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"PASSIVE
+            ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Soul Shred"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Every
+            ",underlined:0b},{color:"green",italic:0b,text:"3rd"},{color:"gray",italic:0b,text:"
+            hit on the same target"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"deals
+            ",underlined:0b},{color:"red",italic:0b,text:"bonus true damage"},{color:"gray",italic:0b,text:"."}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#8A2BE2",italic:0b,obfuscated:0b,strikethrough:0b,text:"Soul
+            Dagger",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"SoulDagger"}}'
+        schema_version: 1
+    item19:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_leggings
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Light
+            as the night air",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"PASSIVE
+            ",underlined:0b},{bold:0b,color:"dark_purple",italic:0b,text:"Phantom
+            Stride"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"While
+            sprinting, you phase through mobs",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"for
+            as long as you keep moving.",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"black",italic:0b,obfuscated:1b,strikethrough:0b,text:"XX",underlined:0b},{color:"dark_purple",italic:1b,obfuscated:0b,text:"PHASE"},{color:"black",italic:0b,obfuscated:1b,text:"XX"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#7F00FF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Phantom
+            Leggings",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"PhantomLeggings"}}'
+        schema_version: 1
+    item20:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_sword
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            tribe classic",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ENTITY
+            HIT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Poison"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Applies
+            Poison ",underlined:0b},{color:"green",italic:0b,text:"I "},{color:"gray",italic:0b,text:"to
+            the hit entity"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"for
+            ",underlined:0b},{color:"green",italic:0b,text:"5"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#32A852",italic:0b,obfuscated:0b,strikethrough:0b,text:"Poison
+            Fang",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"PoisonFang"}}'
+        schema_version: 1
+    item21:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_pickaxe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            sword made from the essence of The End",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            BLOCK BREAK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Haste"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            Haste ",underlined:0b},{color:"green",italic:0b,text:"II "},{color:"gray",italic:0b,text:"lasting
+            "},{color:"green",italic:0b,text:"5"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#3867FF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Hasty
+            Pickaxe",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"HastyPickaxe"}}'
+        schema_version: 1
+    item22:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lantern
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Light
+            of the unseen",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Reveal Spirits"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Reveals
+            all nearby invisible entities for 10s.",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"20"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#66FFFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Spirit
+            Lantern",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"SpiritLantern"}}'
+        schema_version: 1
+    item23:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_axe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            gift from zeus",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Fire from
+            above"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Shoots
+            a lightning at the block you are",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"looking
+            at",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Max
+            Distance: ",underlined:0b},{color:"green",italic:0b,text:"30 "},{color:"gray",italic:0b,text:"blocks"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"3"},{color:"dark_aqua",italic:0b,text:"0s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#71A69C",italic:0b,obfuscated:0b,strikethrough:0b,text:"Storm
+            Bringer",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"Stormbringer"}}'
+        schema_version: 1
+    item24:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:bow
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Is
+            that a Warframe reference",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            SHOOT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Fly away"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            Levitation ",underlined:0b},{color:"green",italic:0b,text:"II "},{color:"gray",italic:0b,text:"for
+            "},{color:"green",italic:0b,text:"3 "},{color:"gray",italic:0b,text:"seconds"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"to
+            the hit enemy.",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#E06710",italic:0b,obfuscated:0b,strikethrough:0b,text:"Zephyr
+            Bow",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"ZephyrBow"}}'
+        schema_version: 1
+    item25:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_axe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Frozen
+            relic of the north",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Frost Slam"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Freezes
+            enemies in a ",underlined:0b},{color:"green",italic:0b,text:"5"},{color:"gray",italic:0b,text:"
+            block radius"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Slowness
+            III for ",underlined:0b},{color:"green",italic:0b,text:"5s"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"15"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#4AD8FF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Frost
+            Hammer",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"FrostHammer"}}'
+        schema_version: 1
+    item26:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:shield
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Just
+            a regular defensive shield",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"OFF
+            HAND SNEAK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Fortify"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            Resistance ",underlined:0b},{color:"green",italic:0b,text:"II "},{color:"gray",italic:0b,text:"for
+            "},{color:"green",italic:0b,text:"3 "},{color:"gray",italic:0b,text:"seconds."}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#ADFFF4",italic:0b,obfuscated:0b,strikethrough:0b,text:"Guardian
+            Shield",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"GuardianShield"}}'
+        schema_version: 1
+    item27:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_sword
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            risky weapon",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            HIT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Trade off"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Does
+            ",underlined:0b},{color:"red",italic:0b,text:"30"},{color:"gray",italic:0b,text:"%
+            more damage but gives Weakness "},{color:"green",italic:0b,text:"I"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"for
+            ",underlined:0b},{color:"green",italic:0b,text:"3 "},{color:"gray",italic:0b,text:"seconds"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"4"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#940A21",italic:0b,obfuscated:0b,strikethrough:0b,text:"Double
+            Edged Sword",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"DoubleEdgedSword"}}'
+        schema_version: 1
+    item28:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:leather_boots
+        count: 1
+        components:
+          minecraft:dyed_color: '12632256'
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Made
+            from rabbit feet",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"WHEN
+            EQUIPPED ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Jump Boots"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Gives
+            Jump Boost ",underlined:0b},{color:"green",italic:0b,text:"II"},{color:"gray",italic:0b,text:"
+            and Speed "},{color:"green",italic:0b,text:"I"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#82FAEE",italic:0b,obfuscated:0b,strikethrough:0b,text:"Rabbit
+            Boots",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:dyed_color","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"RabbitBoots"}}'
+        schema_version: 1
+    item29:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:trident
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"If
+            zeus and poseidon had a baby",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            THROW ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Lighning"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Every
+            time the trident gets thrown it unleashes",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"a
+            lightning, regardless of weather",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#21B5AB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Tempest
+            Trident",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"TempestTrident"}}'
+        schema_version: 1
+    item30:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_sword
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            sword gifted from the underworld",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            ENTITY HIT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Life
+            Steal"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Heals
+            ",underlined:0b},{color:"green",italic:0b,text:"1 "},{color:"gray",italic:0b,text:"heart
+            of health."}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"aqua",italic:0b,text:"3s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#A12E00",italic:0b,obfuscated:0b,strikethrough:0b,text:"Vampire
+            Dagger",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"VampireSword"}}'
+        schema_version: 1
+    item31:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:bow
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Freezing
+            ranged weapon",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            HIT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Frostbite"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Arrows
+            inflict ",underlined:0b},{color:"aqua",italic:0b,text:"Slowness II"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"for
+            ",underlined:0b},{color:"green",italic:0b,text:"5s "},{color:"gray",italic:0b,text:"on
+            enemies struck."}],text:""},""]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#9CF3FF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Glacial
+            Bow",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"GlacialBow"}}'
+        schema_version: 1
+    item32:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_axe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Slam
+            slam slam",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK BLOCK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"SLAM"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Slams
+            the blocks on the ground and launches",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"nearby
+            entities in the air.",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"20"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#6E8574",italic:0b,obfuscated:0b,strikethrough:0b,text:"Giant
+            Hammer",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"GiantHammer"}}'
+        schema_version: 1
+    item33:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_axe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"An
+            axe that grows stronger as death draws near",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"PASSIVE
+            ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Executioner''s
+            Wrath"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Deal
+            increased damage the lower",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"your
+            target''s health is.",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"black",italic:0b,obfuscated:1b,strikethrough:0b,text:"OO",underlined:0b},{color:"dark_red",italic:1b,obfuscated:0b,text:"REAPER"},{color:"black",italic:0b,obfuscated:1b,text:"OO"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#5C0F0F",italic:0b,obfuscated:0b,strikethrough:0b,text:"Soul
+            Reaper Axe",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"SoulReaperAxe"}}'
+        schema_version: 1
+    item34:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:carrot_on_a_stick
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Harness
+            the power of wind",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Pull"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Pulls
+            all nearby enemies 3 blocks towards you.",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"8"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#99FFFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Windlash
+            Whip",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"WindlashWhip"}}'
+        schema_version: 1
+    item35:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stick
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"A
+            staff that channels lightning",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"RIGHT
+            CLICK ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Chain Lightning"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Strikes
+            a target with lightning",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"and
+            arcs to up to 2 nearby entities.",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Cooldown:
+            ",underlined:0b},{color:"green",italic:0b,text:"8"},{color:"gray",italic:0b,text:"s"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#9CF3FF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Chain
+            Lightning Staff",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"ChainLightningStaff"}}'
+        schema_version: 1
+    item36:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_axe
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Forged
+            from volcanic depths",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ON
+            HIT ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Crushing Blow"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Every
+            4th hit causes an explosion",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"black",italic:0b,obfuscated:1b,strikethrough:0b,text:"OO",underlined:0b},{color:"dark_purple",italic:1b,obfuscated:0b,text:"MACE"},{color:"black",italic:0b,obfuscated:1b,text:"OO"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#4B0082",italic:0b,obfuscated:0b,strikethrough:0b,text:"Obsidian
+            Mace",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"ObsidianMace"}}'
+        schema_version: 1
+    item37:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:bow
+        count: 1
+        components:
+          minecraft:unbreakable: '{}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Arrows
+            of pure void energy",underlined:0b}],text:""},"",{extra:[{bold:1b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"PASSIVE
+            ",underlined:0b},{bold:0b,color:"gold",italic:0b,text:"Phasing Arrows"}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Arrows
+            fired pierce through enemies,",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"damaging
+            multiple targets in a line.",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"black",italic:0b,obfuscated:1b,strikethrough:0b,text:"OO",underlined:0b},{color:"dark_purple",italic:1b,obfuscated:0b,text:"VOID"},{color:"black",italic:0b,obfuscated:1b,text:"OO"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#4B0082",italic:0b,obfuscated:0b,strikethrough:0b,text:"Void
+            Bow",underlined:0b}],text:""}'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:charged_projectiles","minecraft:block_entity_data","minecraft:banner_patterns","minecraft:bundle_contents","minecraft:instrument","minecraft:container","minecraft:container_loot","minecraft:painting/variant","minecraft:bees","minecraft:map_id","minecraft:pot_decorations","minecraft:fireworks","minecraft:firework_explosion","minecraft:tropical_fish/pattern","minecraft:block_state","minecraft:jukebox_playable","minecraft:written_book_content","minecraft:potion_contents","minecraft:unbreakable"]}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"itemcatalog:item_catalog_id":"VoidBow"}}'
+        schema_version: 1
+    item38:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_horse_armor
+        count: 1
+        components:
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ꜰɪʀᴇ
+            ᴅᴏᴡɴ ᴀᴛ ʏᴏᴜʀ ꜰᴇᴇᴛ",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ɪɴ
+            ᴏʀᴅᴇʀ ᴛᴏ ʀᴏᴄᴋᴇᴛ-ᴊᴜᴍᴘ!",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"ɢʀᴏᴄᴋᴇᴛ
+            ʙᴀᴢᴏᴏᴋᴀ",underlined:0b},{color:"aqua",italic:0b,text:" ▪ «2»"}],text:""}'
+        schema_version: 1
+    item39:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_horse_armor
+        count: 1
+        components:
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ꜰᴜʟʟʏ
+            ᴀᴜᴛᴏᴍᴀᴛɪᴄ ᴡɪᴛʜ ʜɪɢʜ ᴘᴏᴡᴇʀ",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ᴇꜰꜰᴇᴄᴛɪᴠᴇ
+            ᴀᴛ ᴍᴇᴅɪᴜᴍ ʀᴀɴɢᴇ",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ᴄᴏɴᴛʀᴏʟꜱ
+            ᴀʀᴇ ɪɴᴠᴇʀᴛᴇᴅ.",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"KC-47",underlined:0b},{color:"aqua",italic:0b,text:"
+            ▪ «25»"}],text:""}'
+        schema_version: 1
+    item40:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cocoa_beans
+        count: 1
+        components:
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ᴀ
+            ᴄʟᴜꜱᴛᴇʀ ʙᴏᴍʙ ᴛʜᴀᴛ ʀᴇʟᴇᴀꜱᴇꜱ",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"10
+            ʙᴏᴍʙʟᴇᴛꜱ ᴜᴘᴏɴ ᴅᴇᴛᴏɴᴀᴛɪᴏɴ.",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"ʙʟᴀꜱᴛ
+            ᴘᴀᴄᴋ",underlined:0b},{color:"yellow",italic:0b,text:""}],text:""}'
+          minecraft:damage: '0'
+        schema_version: 1
+    item41:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:slime_ball
+        count: 1
+        components:
+          minecraft:lore: '[{extra:[{bold:0b,color:"blue",italic:0b,obfuscated:0b,strikethrough:0b,text:"(i)
+            ",underlined:0b},{color:"gray",italic:0b,text:"Pull your enemies strongly!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"Force
+            Pull",underlined:0b},{color:"yellow",italic:0b,text:" «×»"}],text:""}'
+        schema_version: 1
+    item42:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:feather
+        count: 1
+        components:
+          minecraft:custom_name: '{extra:[{bold:0b,color:"light_purple",italic:0b,obfuscated:0b,strikethrough:0b,text:"Pigpack",underlined:0b},{color:"light_purple",italic:0b,text:"
+            «100»"}],text:""}'
+        schema_version: 1
+    item43:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_sword
+        count: 1
+        components:
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ᴍᴀᴋᴇꜱ
+            ᴛʜᴇ ᴜꜱᴇʀ ᴄʜᴀʀɢᴇ ꜰᴏʀᴡᴀʀᴅ ᴀᴛ",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"ʜɪɢʜ
+            ꜱᴘᴇᴇᴅ, ᴅᴀᴍᴀɢɪɴɢ ᴇɴᴇᴍɪᴇꜱ ɪɴ ᴛʜᴇ ᴘᴀᴛʜ",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"ᴄᴏᴏʟᴅᴏᴡɴ:
+            3 ꜱᴇᴄ",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"ᴅᴀꜱʜᴇʀ",underlined:0b},{color:"green",italic:0b,text:"
+            ▪ «1»"}],text:""}'
+        schema_version: 1
+    item44:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:fishing_rod
+        count: 1
+        components:
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FF500A",italic:0b,obfuscated:0b,strikethrough:0b,text:"Grappling
+            Hook ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"(Right
+            Click)",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"skyline:skyline":10}}'
+        schema_version: 1
+  page8:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cobweb
+        count: 64
+        schema_version: 1
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cobweb
+        count: 32
+        schema_version: 1
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cobblestone
+        count: 64
+        schema_version: 1
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cobblestone
+        count: 32
+        schema_version: 1
+    item4:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ice
+        count: 64
+        schema_version: 1
+    item5:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:ice
+        count: 16
+        schema_version: 1
+    item6:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:packed_ice
+        count: 64
+        schema_version: 1
+    item7:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:packed_ice
+        count: 16
+        schema_version: 1
+    item8:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:string
+        count: 64
+        schema_version: 1
+    item9:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:blue_ice
+        count: 64
+        schema_version: 1
+    item10:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:blue_ice
+        count: 16
+        schema_version: 1
+    item11:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 64
+        components:
+          minecraft:profile: '{id:[I;305419896,305402420,305397760,4],name:"",properties:[{name:"textures",value:"e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Place
+            on the ground and open for fun surprises.",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Recommend
+            opening with a smile!",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%+
+            Luck",underlined:0b}],text:""},{extra:[{bold:0b,color:"red",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%-
+            Misfortune",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"WARNING:
+            ",underlined:0b},{bold:0b,color:"gray",italic:0b,text:"May contain dangerous
+            drops, you may die!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:1b,color:"gold",italic:0b,obfuscated:0b,strikethrough:0b,text:"🧭
+            ",underlined:0b},{bold:0b,color:"yellow",italic:0b,text:"Lucky Block "},{bold:1b,color:"gold",italic:0b,text:"🧭"}],text:""}'
+          minecraft:custom_data: '{luckyblock_type:"yellow"}'
+        schema_version: 1
+    item12:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 16
+        components:
+          minecraft:profile: '{id:[I;305419896,305402420,305397760,4],name:"",properties:[{name:"textures",value:"e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdiYzFiNjRjYmEzZGM0Y2VmZTRlMTIxYzNjZGJiYjBmYTk5YWJhMGUxMTNiNWM5MTY4MTVmYzliMzA0ZTYzNiJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Place
+            on the ground and open for fun surprises.",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Recommend
+            opening with a smile!",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%+
+            Luck",underlined:0b}],text:""},{extra:[{bold:0b,color:"red",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%-
+            Misfortune",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"WARNING:
+            ",underlined:0b},{bold:0b,color:"gray",italic:0b,text:"May contain dangerous
+            drops, you may die!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:1b,color:"gold",italic:0b,obfuscated:0b,strikethrough:0b,text:"🧭
+            ",underlined:0b},{bold:0b,color:"yellow",italic:0b,text:"Lucky Block "},{bold:1b,color:"gold",italic:0b,text:"🧭"}],text:""}'
+          minecraft:custom_data: '{luckyblock_type:"yellow"}'
+        schema_version: 1
+    item13:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 16
+        components:
+          minecraft:profile: '{id:[I;305419896,305402420,305397760,14],name:"",properties:[{name:"textures",value:"e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Place
+            on the ground and open for fun surprises.",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Recommend
+            opening with a smile!",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"45%+
+            Luck",underlined:0b}],text:""},{extra:[{bold:0b,color:"red",italic:0b,obfuscated:0b,strikethrough:0b,text:"55%-
+            Misfortune",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"WARNING:
+            ",underlined:0b},{bold:0b,color:"gray",italic:0b,text:"May contain dangerous
+            drops, you will die!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"🧭
+            ",underlined:0b},{bold:0b,color:"red",italic:0b,text:"Lucky Block "},{bold:1b,color:"dark_red",italic:0b,text:"🧭"}],text:""}'
+          minecraft:custom_data: '{luckyblock_type:"red"}'
+        schema_version: 1
+    item14:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 16
+        components:
+          minecraft:profile: '{id:[I;305419896,305402420,305397760,3],name:"",properties:[{name:"textures",value:"e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjVmZWQ0NmIzOWM2YzM0ZDQ5MTE0M2I3MmNlNzI4Nzk3ZDE2ZjliNWFhNDBiYmRlYzYxNjY3ZjVmZjlkM2Q0NSJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Place
+            on the ground and open for fun surprises.",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Recommend
+            opening with a smile!",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%+
+            Luck",underlined:0b}],text:""},{extra:[{bold:0b,color:"red",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%-
+            Misfortune",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"WARNING:
+            ",underlined:0b},{bold:0b,color:"gray",italic:0b,text:"May contain dangerous
+            drops, you may die!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:1b,color:"blue",italic:0b,obfuscated:0b,strikethrough:0b,text:"🧭
+            ",underlined:0b},{bold:0b,color:"aqua",italic:0b,text:"Lucky Block "},{bold:1b,color:"blue",italic:0b,text:"🧭"}],text:""}'
+          minecraft:custom_data: '{luckyblock_type:"light_blue"}'
+        schema_version: 1
+    item15:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 16
+        components:
+          minecraft:profile: '{id:[I;305419896,305402420,305397760,5],name:"",properties:[{name:"textures",value:"e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjAzZjVhOWJjNzE5Y2QxMTI3YmUwOTU0YzczY2Q1NzE0ZWNkNDc4ZGFkODgwZWYyYjk5NzljNDgxMDk3ZTZiZSJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Place
+            on the ground and open for fun surprises.",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Recommend
+            opening with a smile!",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"55%+
+            Luck",underlined:0b}],text:""},{extra:[{bold:0b,color:"red",italic:0b,obfuscated:0b,strikethrough:0b,text:"45%-
+            Misfortune",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"WARNING:
+            ",underlined:0b},{bold:0b,color:"gray",italic:0b,text:"May contain dangerous
+            drops, you may die!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:1b,color:"dark_green",italic:0b,obfuscated:0b,strikethrough:0b,text:"🧭
+            ",underlined:0b},{bold:0b,color:"green",italic:0b,text:"Lucky Block "},{bold:1b,color:"dark_green",italic:0b,text:"🧭"}],text:""}'
+          minecraft:custom_data: '{luckyblock_type:"lime"}'
+        schema_version: 1
+    item16:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 16
+        components:
+          minecraft:profile: '{id:[I;305419896,305402420,305397760,11],name:"",properties:[{name:"textures",value:"e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODUzNGIxN2QyZDNiNWE2NGM1N2Y1ZjA4MGRkNzc3OTQ1NzYxZDlmNzFkODJlOGY1OTlmMjQyOTc2ZTRkMGMwNSJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Place
+            on the ground and open for fun surprises.",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Recommend
+            opening with a smile!",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%+
+            Luck",underlined:0b}],text:""},{extra:[{bold:0b,color:"red",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%-
+            Misfortune",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"WARNING:
+            ",underlined:0b},{bold:0b,color:"gray",italic:0b,text:"May contain dangerous
+            drops, you may die!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:1b,color:"blue",italic:0b,obfuscated:0b,strikethrough:0b,text:"🧭
+            ",underlined:0b},{bold:0b,color:"dark_blue",italic:0b,text:"Lucky Block
+            "},{bold:1b,color:"blue",italic:0b,text:"🧭"}],text:""}'
+          minecraft:custom_data: '{luckyblock_type:"blue"}'
+        schema_version: 1
+    item17:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 16
+        components:
+          minecraft:profile: '{id:[I;305419896,305402420,305397760,0],name:"",properties:[{name:"textures",value:"e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzhlMTZlN2ZmMTNkM2UzMGEzYTJiODM1YTg2ZmQwNWVjYmMwODkwOWY2MDU2ZGUxNjQ2ZmUyNWIzZGVmOTU4NCJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Place
+            on the ground and open for fun surprises.",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"Recommend
+            opening with a smile!",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"green",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%+
+            Luck",underlined:0b}],text:""},{extra:[{bold:0b,color:"red",italic:0b,obfuscated:0b,strikethrough:0b,text:"50%-
+            Misfortune",underlined:0b}],text:""},{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:1b,color:"dark_red",italic:0b,obfuscated:0b,strikethrough:0b,text:"WARNING:
+            ",underlined:0b},{bold:0b,color:"gray",italic:0b,text:"May contain dangerous
+            drops, you may die!"}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:1b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"🧭
+            ",underlined:0b},{bold:0b,color:"white",italic:0b,text:"Lucky Block "},{bold:1b,color:"gray",italic:0b,text:"🧭"}],text:""}'
+          minecraft:custom_data: '{luckyblock_type:"white"}'
+        schema_version: 1
+    item18:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#B49DCF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Simple
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#B49DCF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Simple
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"SIMPLE"}}'
+        schema_version: 1
+    item19:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#14D772",italic:0b,obfuscated:0b,strikethrough:0b,text:"Unique
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#14D772",italic:0b,obfuscated:0b,strikethrough:0b,text:"Unique
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"UNIQUE"}}'
+        schema_version: 1
+    item20:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#0A8FAB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Elite
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#0A8FAB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Elite
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"ELITE"}}'
+        schema_version: 1
+    item21:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#FFD74F",italic:0b,obfuscated:0b,strikethrough:0b,text:"Ultimate
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FFD74F",italic:0b,obfuscated:0b,strikethrough:0b,text:"Ultimate
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"ULTIMATE"}}'
+        schema_version: 1
+    item22:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#E67100",italic:0b,obfuscated:0b,strikethrough:0b,text:"Legendary
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#E67100",italic:0b,obfuscated:0b,strikethrough:0b,text:"Legendary
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"LEGENDARY"}}'
+        schema_version: 1
+    item23:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#774FFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Fabled
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#774FFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Fabled
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"FABLED"}}'
+        schema_version: 1
+    item24:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#D63232",italic:0b,obfuscated:0b,strikethrough:0b,text:"Divine
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#D63232",italic:0b,obfuscated:0b,strikethrough:0b,text:"Divine
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"DIVINE"}}'
+        schema_version: 1
+    item25:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 16
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#762624",italic:0b,obfuscated:0b,strikethrough:0b,text:"Special
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#762624",italic:0b,obfuscated:0b,strikethrough:0b,text:"Special
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"SPECIAL"}}'
+        schema_version: 1
+    item26:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#B49DCF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Simple
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#B49DCF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Simple
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"SIMPLE"}}'
+        schema_version: 1
+    item27:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#14D772",italic:0b,obfuscated:0b,strikethrough:0b,text:"Unique
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#14D772",italic:0b,obfuscated:0b,strikethrough:0b,text:"Unique
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"UNIQUE"}}'
+        schema_version: 1
+    item28:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#0A8FAB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Elite
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#0A8FAB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Elite
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"ELITE"}}'
+        schema_version: 1
+    item29:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#FFD74F",italic:0b,obfuscated:0b,strikethrough:0b,text:"Ultimate
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#FFD74F",italic:0b,obfuscated:0b,strikethrough:0b,text:"Ultimate
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"ULTIMATE"}}'
+        schema_version: 1
+    item30:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#E67100",italic:0b,obfuscated:0b,strikethrough:0b,text:"Legendary
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#E67100",italic:0b,obfuscated:0b,strikethrough:0b,text:"Legendary
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"LEGENDARY"}}'
+        schema_version: 1
+    item31:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#774FFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Fabled
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#774FFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"Fabled
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"FABLED"}}'
+        schema_version: 1
+    item32:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#D63232",italic:0b,obfuscated:0b,strikethrough:0b,text:"Divine
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#D63232",italic:0b,obfuscated:0b,strikethrough:0b,text:"Divine
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"DIVINE"}}'
+        schema_version: 1
+    item33:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:written_book
+        count: 4
+        components:
+          minecraft:written_book_content: '{author:"",title:{raw:""}}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right
+            Click while holding to receive a random",underlined:0b}],text:""},{extra:[{bold:0b,color:"#762624",italic:0b,obfuscated:0b,strikethrough:0b,text:"Special
+            enchantment book.",underlined:0b}],text:""}]'
+          minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers","minecraft:can_break","minecraft:enchantments","minecraft:can_place_on","minecraft:unbreakable","minecraft:instrument","minecraft:block_state","minecraft:container","minecraft:pot_decorations","minecraft:written_book_content","minecraft:charged_projectiles","minecraft:potion_contents","minecraft:fireworks","minecraft:tropical_fish/pattern","minecraft:block_entity_data","minecraft:firework_explosion","minecraft:bees","minecraft:bundle_contents","minecraft:painting/variant","minecraft:banner_patterns","minecraft:map_id","minecraft:jukebox_playable","minecraft:container_loot","minecraft:trim"]}'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"#762624",italic:0b,obfuscated:0b,strikethrough:0b,text:"Special
+            Enchantment Book ",underlined:0b},{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[Right
+            Click]",underlined:0b}],text:""}'
+          minecraft:custom_model_data: '{floats:[0.0f]}'
+          minecraft:custom_data: '{PublicBukkitValues:{"advancedenchantments:rcbook_new":"SPECIAL"}}'
+        schema_version: 1
+  page1:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item4:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item5:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_sword
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item6:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:trident
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item7:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:bow
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item8:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:crossbow
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item9:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item10:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item11:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item12:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item13:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item14:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_axe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item15:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:fishing_rod
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item16:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:mace
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item17:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:shield
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item18:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item19:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item20:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item21:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item22:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item23:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_pickaxe
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item24:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:flint_and_steel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item25:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:elytra
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item26:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:wooden_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item27:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:stone_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item28:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:iron_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item29:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item30:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:diamond_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item31:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:netherite_shovel
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item32:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:shears
+        count: 1
+        schema_version: 1
+      enchantgui: true
+    item33:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:happy_ghast_spawn_egg
+        count: 1
+        schema_version: 1
+    item34:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:white_harness
+        count: 1
+        schema_version: 1
+    item35:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:totem_of_undying
+        count: 1
+        schema_version: 1
+    item36:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:turtle_helmet
+        count: 1
+        schema_version: 1
+    item37:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 1
+        components:
+          minecraft:profile: '{id:[I;870529782,-1410322370,-1092235640,-1786259567],name:"Skaian",properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWMyZmM4ZWI3NTRhN2YyOWM5NzIzOWVjMTQwY2UyM2U1MmIzMGE3NTJmZjM4YTkxYzM1Nzc5NWE0Njc3MjlmZCJ9fX0="}]}'
+        schema_version: 1
+      enchantgui: true
+    item38:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:water_bucket
+        count: 1
+        schema_version: 1
+    item39:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:lava_bucket
+        count: 1
+        schema_version: 1
+    item40:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:powder_snow_bucket
+        count: 1
+        schema_version: 1
+    item41:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pufferfish_bucket
+        count: 1
+        schema_version: 1
+    item42:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:experience_bottle
+        count: 64
+        schema_version: 1
+    item43:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:piglin_head
+        count: 1
+        schema_version: 1
+    item44:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:dragon_head
+        count: 1
+        schema_version: 1
+  page2:
+    item0:
+      slot: 0
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 64
+        schema_version: 1
+    item1:
+      slot: 1
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 16
+        schema_version: 1
+    item2:
+      slot: 2
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 4
+        schema_version: 1
+    item3:
+      slot: 3
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:enchanted_golden_apple
+        count: 2
+        schema_version: 1
+    item4:
+      slot: 9
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 64
+        schema_version: 1
+    item5:
+      slot: 10
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 32
+        schema_version: 1
+    item6:
+      slot: 11
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 16
+        schema_version: 1
+    item7:
+      slot: 12
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 8
+        schema_version: 1
+    item8:
+      slot: 13
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_apple
+        count: 4
+        schema_version: 1
+    item9:
+      slot: 18
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 64
+        schema_version: 1
+    item10:
+      slot: 19
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 32
+        schema_version: 1
+    item11:
+      slot: 20
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 16
+        schema_version: 1
+    item12:
+      slot: 21
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:golden_carrot
+        count: 8
+        schema_version: 1
+    item13:
+      slot: 27
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:melon_slice
+        count: 64
+        schema_version: 1
+    item14:
+      slot: 28
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_porkchop
+        count: 64
+        schema_version: 1
+    item15:
+      slot: 29
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_beef
+        count: 64
+        schema_version: 1
+    item16:
+      slot: 30
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cake
+        count: 1
+        schema_version: 1
+    item17:
+      slot: 31
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:suspicious_stew
+        count: 1
+        components:
+          minecraft:suspicious_stew_effects: '[{duration:7,id:"minecraft:saturation"}]'
+        schema_version: 1
+    item18:
+      slot: 32
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:mushroom_stew
+        count: 1
+        schema_version: 1
+    item19:
+      slot: 33
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:beetroot_soup
+        count: 1
+        schema_version: 1
+    item20:
+      slot: 34
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:rabbit_stew
+        count: 1
+        schema_version: 1
+    item21:
+      slot: 35
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:milk_bucket
+        count: 1
+        schema_version: 1
+    item22:
+      slot: 8
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cookie
+        count: 64
+        schema_version: 1
+    item23:
+      slot: 7
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cookie
+        count: 32
+        schema_version: 1
+    item24:
+      slot: 6
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cookie
+        count: 16
+        schema_version: 1
+    item25:
+      slot: 17
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_mutton
+        count: 64
+        schema_version: 1
+    item26:
+      slot: 16
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_mutton
+        count: 16
+        schema_version: 1
+    item27:
+      slot: 36
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:melon_slice
+        count: 16
+        schema_version: 1
+    item28:
+      slot: 37
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_porkchop
+        count: 16
+        schema_version: 1
+    item29:
+      slot: 38
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_beef
+        count: 16
+        schema_version: 1
+    item30:
+      slot: 26
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pumpkin_pie
+        count: 64
+        schema_version: 1
+    item31:
+      slot: 25
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pumpkin_pie
+        count: 32
+        schema_version: 1
+    item32:
+      slot: 24
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:pumpkin_pie
+        count: 16
+        schema_version: 1
+    item33:
+      slot: 39
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_chicken
+        count: 64
+        schema_version: 1
+    item34:
+      slot: 40
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_chicken
+        count: 16
+        schema_version: 1
+    item35:
+      slot: 41
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_rabbit
+        count: 64
+        schema_version: 1
+    item36:
+      slot: 42
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cooked_rabbit
+        count: 16
+        schema_version: 1
+    item37:
+      slot: 43
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:dried_kelp
+        count: 64
+        schema_version: 1
+    item38:
+      slot: 44
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:dried_kelp
+        count: 16
+        schema_version: 1
+    item39:
+      slot: 4
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 64
+        components:
+          minecraft:profile: '{id:[I;-1639951700,-741852888,-1546738907,8291821],name:"uoap",properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDIxY2FiNDA5NWU3MWJkOTI1Y2Y0NjQ5OTBlMThlNDNhZGI3MjVkYjdjYzE3NWZkOWQxZGVjODIwOTE0YjNkZSJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right-click
+            or place to consume",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"gold",italic:0b,obfuscated:0b,strikethrough:0b,text:"Golden
+            Head",underlined:0b}],text:""}'
+        schema_version: 1
+    item40:
+      slot: 5
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 16
+        components:
+          minecraft:profile: '{id:[I;-1639951700,-741852888,-1546738907,8291821],name:"uoap",properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDIxY2FiNDA5NWU3MWJkOTI1Y2Y0NjQ5OTBlMThlNDNhZGI3MjVkYjdjYzE3NWZkOWQxZGVjODIwOTE0YjNkZSJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right-click
+            or place to consume",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"gold",italic:0b,obfuscated:0b,strikethrough:0b,text:"Golden
+            Head",underlined:0b}],text:""}'
+        schema_version: 1
+    item41:
+      slot: 14
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 8
+        components:
+          minecraft:profile: '{id:[I;-1639951700,-741852888,-1546738907,8291821],name:"uoap",properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDIxY2FiNDA5NWU3MWJkOTI1Y2Y0NjQ5OTBlMThlNDNhZGI3MjVkYjdjYzE3NWZkOWQxZGVjODIwOTE0YjNkZSJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right-click
+            or place to consume",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"gold",italic:0b,obfuscated:0b,strikethrough:0b,text:"Golden
+            Head",underlined:0b}],text:""}'
+        schema_version: 1
+    item42:
+      slot: 15
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:player_head
+        count: 4
+        components:
+          minecraft:profile: '{id:[I;-1639951700,-741852888,-1546738907,8291821],name:"uoap",properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDIxY2FiNDA5NWU3MWJkOTI1Y2Y0NjQ5OTBlMThlNDNhZGI3MjVkYjdjYzE3NWZkOWQxZGVjODIwOTE0YjNkZSJ9fX0="}]}'
+          minecraft:lore: '[{extra:[{bold:0b,color:"gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"Right-click
+            or place to consume",underlined:0b}],text:""}]'
+          minecraft:custom_name: '{extra:[{bold:0b,color:"gold",italic:0b,obfuscated:0b,strikethrough:0b,text:"Golden
+            Head",underlined:0b}],text:""}'
+        schema_version: 1
+    item43:
+      slot: 22
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:cookie
+        count: 64
+        schema_version: 1
+    item44:
+      slot: 23
+      data_type: default
+      data:
+        DataVersion: 4440
+        id: minecraft:chorus_fruit
+        count: 32
         schema_version: 1
