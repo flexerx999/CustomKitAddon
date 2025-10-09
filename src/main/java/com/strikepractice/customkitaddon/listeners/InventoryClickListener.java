@@ -2,10 +2,10 @@ package com.strikepractice.customkitaddon.listeners;
 
 import com.strikepractice.customkitaddon.CustomKitAddon;
 import com.strikepractice.customkitaddon.gui.CustomItemsGUI;
+import com.strikepractice.customkitaddon.gui.EnchantmentGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import com.strikepractice.customkitaddon.gui.EnchantmentGUI;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;

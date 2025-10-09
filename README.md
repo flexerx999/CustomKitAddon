@@ -1,18 +1,23 @@
 # 🎉 CustomKitAddon - Customkit Silly Addon
 
-**Multi-page custom items GUI** - customisable amount of pages with navigation, opened on clicking on blank slots in **/customkit**
+**Multi-page custom items GUI** - customisable amount of pages with navigation, opened on clicking on blank slots in **/customkit**.
 
-**Admin commands** - /customkitadmin add and /customkitadmin reload
+**Admin commands** - [ /customkitadmin add ] and [ /customkitadmin reload ]
 
-**Full YAML config** - Custom items with enchantments, attributes and special properties
+**Permissions** - customkit.use and customkit.admin
 
+**Full YAML config** - Custom items with all types of data involved, metadata and skulls support.
 
-# CustomKitAddon Project Structure
+**Enchantment GUI** - Added a Custom GUI for enchants, different type of enchants list for each different item.
+
+**Pre-made Items** - All types of supported items with options involved for enchants gui installed on jar drop.
+
+# CustomKitAddon Project Structure + Instructions
 ```
 CustomKitAddon/
 │
 ├── libs/
-│   └── api.jar (download from API site)
+│   └── strikepractice-api.jar (download from API site) + make a folder called libs in the root then drop the api jar in it.
 │
 ├── src/
 │   └── main/
@@ -25,6 +30,7 @@ CustomKitAddon/
 │       │               ├── commands/
 │       │               │   ├── AdminCommand.java
 │       │               │   └── CustomKitCommand.java
+│       │               │   └── DebugCommand.java
 │       │               │
 │       │               ├── config/
 │       │               │   ├── ConfigManager.java
@@ -36,7 +42,7 @@ CustomKitAddon/
 │       │               │   └── GUIManager.java
 │       │               │
 │       │               ├── listeners/
-│       │               │   ├── ChatListener.java
+│       │               │   ├── EloChangeListener.java
 │       │               │   ├── InventoryClickListener.java
 │       │               │   └── SpListener.java
 │       │               │
@@ -53,8 +59,15 @@ CustomKitAddon/
 │           └── items.yml
 │
 ├── target/ (generated after build)
-│   └── CustomKitAddon-1.0.0.jar
+│   └── CustomKitAddon-1.0.jar
 │
 ├── pom.xml (Maven configuration)
 ├── README.md (Documentation)
-└── .gitignore (Git ignore file)```
+└── .gitignore (Git ignore file)
+```
+Plans For Future mebeeee:
+- Armor changer support
+- Item amount changer
+- Shulker addon idk lmao
+
+Current Known Issues: Once in a hundred, the menu shows strikepractice menu rather than the custom one, will be fixed hopefully.
