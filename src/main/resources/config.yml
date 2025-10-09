@@ -5,6 +5,7 @@
 gui:
   title: "&8Custom Kit Items - Page %page%"
   items-per-page: 45  # Max items per page (excluding bottom navigation row)
+  pages: 3
 
 # Settings
 settings:

@@ -6,11 +6,11 @@ import com.strikepractice.customkitaddon.commands.DebugCommand;
 import com.strikepractice.customkitaddon.config.ConfigManager;
 import com.strikepractice.customkitaddon.config.ItemsConfig;
 import com.strikepractice.customkitaddon.gui.GUIManager;
-import com.strikepractice.customkitaddon.listeners.EloChangeListener;
 import com.strikepractice.customkitaddon.listeners.InventoryClickListener;
 import com.strikepractice.customkitaddon.listeners.StrikePracticeListener;
 import ga.strikepractice.StrikePractice;
 import ga.strikepractice.api.StrikePracticeAPI;
+import ga.strikepractice.fights.elo.EloCalculator;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,6 +23,7 @@ public class CustomKitAddon extends JavaPlugin {
     private ItemsConfig itemsConfig;
     private GUIManager guiManager;
     private CustomKitCommand customKitCommand;
+    private boolean eloCalculatorRegistered = false;
 
     @Override
     public void onEnable() {
@@ -56,6 +57,9 @@ public class CustomKitAddon extends JavaPlugin {
         // Register listeners
         registerListeners();
 
+        // Register ELO calculator only if enabled
+        updateEloCalculator();
+
         getLogger().info("CustomKitAddon v" + getDescription().getVersion() + " has been enabled!");
         getLogger().info("Hooked into StrikePractice successfully!");
 
@@ -67,6 +71,11 @@ public class CustomKitAddon extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        // Unregister ELO calculator on disable
+        if (eloCalculatorRegistered) {
+            unregisterEloCalculator();
+        }
+
         getLogger().info("CustomKitAddon has been disabled!");
         HandlerList.unregisterAll(this);
     }
@@ -93,19 +102,74 @@ public class CustomKitAddon extends JavaPlugin {
     private void registerListeners() {
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(this), this);
         Bukkit.getPluginManager().registerEvents(new StrikePracticeListener(this), this);
-        Bukkit.getPluginManager().registerEvents(new EloChangeListener(this), this);
+    }
 
-        // Log if fixated ELO is enabled
+    private void registerEloCalculator() {
+        if (configManager.isFixatedEloEnabled() && !eloCalculatorRegistered) {
+            EloCalculator.setEloCalculator(eloChanges -> {
+                // Check if loser's current ELO is 0 or less
+                if (eloChanges.getLoserOldElo() <= 0) {
+                    // No changes for either player
+                    eloChanges.setWinnerNewElo(eloChanges.getWinnerOldElo());
+                    eloChanges.setLoserNewElo(eloChanges.getLoserOldElo());
+
+                    if (getConfigManager().isDebugEnabled()) {
+                        getLogger().info("ELO Change prevented: Loser already at 0 or below (was " +
+                                eloChanges.getLoserOldElo() + ") - No changes applied");
+                    }
+                } else {
+                    // Normal ELO changes
+                    eloChanges.setWinnerNewElo(eloChanges.getWinnerOldElo() + getConfigManager().getEloChangeAmount());
+                    eloChanges.setLoserNewElo(eloChanges.getLoserOldElo() - getConfigManager().getEloChangeAmount());
+                }
+            });
+
+            eloCalculatorRegistered = true;
+            getLogger().info("Fixated ELO Calculator REGISTERED - Changes set to: +" + configManager.getEloChangeAmount() + "/-" + configManager.getEloChangeAmount());
+            getLogger().info("ELO Protection: Players at 0 or below ELO cannot lose more points");
+        }
+    }
+
+    private void unregisterEloCalculator() {
+        if (eloCalculatorRegistered) {
+            // Reset to default calculator (null uses StrikePractice's default)
+            EloCalculator.setEloCalculator(null);
+            eloCalculatorRegistered = false;
+            getLogger().info("Fixated ELO Calculator UNREGISTERED - Using default StrikePractice ELO calculation");
+        }
+    }
+
+    private void updateEloCalculator() {
         if (configManager.isFixatedEloEnabled()) {
-            getLogger().info("Fixated ELO is ENABLED - Changes set to: +" + configManager.getEloChangeAmount() + "/-" + configManager.getEloChangeAmount());
+            // Register if not already registered
+            if (!eloCalculatorRegistered) {
+                registerEloCalculator();
+            }
+        } else {
+            // Unregister if currently registered
+            if (eloCalculatorRegistered) {
+                unregisterEloCalculator();
+            }
         }
     }
 
     public void reload() {
+        // Reload configs
         configManager.reload();
         itemsConfig.reload();
         guiManager.clearCache();
+
+        // Update ELO calculator based on new config
+        updateEloCalculator();
+
         getLogger().info("Configuration reloaded!");
+
+        // Log current ELO status
+        if (configManager.isFixatedEloEnabled()) {
+            getLogger().info("Fixated ELO is now ENABLED with change amount: " + configManager.getEloChangeAmount());
+        } else {
+            getLogger().info("Fixated ELO is now DISABLED - using default calculation");
+        }
     }
 
     public static CustomKitAddon getInstance() {
