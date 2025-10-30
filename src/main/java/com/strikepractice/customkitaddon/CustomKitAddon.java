@@ -105,8 +105,13 @@ public class CustomKitAddon extends JavaPlugin {
 
     private void registerEloCalculator() {
         EloCalculator.setEloCalculator(eloChanges -> {
-            eloChanges.setWinnerNewElo(eloChanges.getWinnerOldElo() + getConfigManager().getEloChangeAmount());
-            eloChanges.setLoserNewElo(eloChanges.getLoserNewElo() - getConfigManager().getEloChangeAmount());
+            int eloChange = getConfigManager().getEloChangeAmount();
+            eloChanges.setWinnerNewElo(eloChanges.getWinnerOldElo() + eloChange);
+            int newLoserElo = eloChanges.getLoserOldElo() - eloChange;
+            if (newLoserElo < 0) {
+                newLoserElo = 0;
+            }
+            eloChanges.setLoserNewElo(newLoserElo);
         });
     }
 
